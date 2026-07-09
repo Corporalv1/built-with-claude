@@ -4,6 +4,7 @@
 ![Flutter](https://img.shields.io/badge/Flutter-Dart-02569B?style=flat-square&logo=flutter&logoColor=white)
 ![Roblox](https://img.shields.io/badge/Roblox-Luau-00A2FF?style=flat-square)
 ![Status](https://img.shields.io/badge/status-shipping-brightgreen?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
 > **Just a guy trying to make a dream.**
 
