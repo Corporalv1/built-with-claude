@@ -18,7 +18,7 @@ My working repos are private while the projects are in development, but here's w
 
 | Project | Stack | Status |
 | --- | --- | --- |
-| **DrawWatch** — lottery draw checker | Flutter / Dart | 🟢 Live on Google Play |
+| **[DrawWatch](https://play.google.com/store/apps/details?id=com.numcheck.app)** — automatic lottery draw checker with ticket scanning, group pools, and win notifications | Flutter / Dart | 🟢 [Live on Google Play](https://play.google.com/store/apps/details?id=com.numcheck.app) |
 | **Home inspection app** — faster, better-documented inspections | Flutter / Dart | 🔨 In development |
 | **4v1 asymmetric multiplayer game** — a monster-hunt experience | Roblox / Luau | 🔨 In development (most active) |
 | **Life visualizer** — your whole life at a glance, week by week | Flutter / Dart | 🔨 In development |
@@ -27,6 +27,8 @@ My working repos are private while the projects are in development, but here's w
 ## 🤝 How I work
 
 One person, one AI pair programmer, five projects. Claude handles the heavy lifting on code; I bring the ideas, the taste, the testing, and the stubbornness to ship. Every project in this list went from "thought in my head" to "running software" that way.
+
+**📖 [How I Build — a non-dev's playbook for shipping real apps with Claude](HOW-I-BUILD.md)** — the actual process, what works, and what I got wrong along the way. If you have ideas stuck in your head and no CS degree, start here.
 
 ## 🎯 Why this repo exists
 
