@@ -78,7 +78,7 @@
   .stat .num { font-size: 1.6rem; font-weight: 800; color: var(--accent); }
   .stat .label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
 
-  section { padding: 40px 0; }
+  section.wrap { padding-top: 40px; padding-bottom: 40px; }
   h2 {
     font-size: 1.5rem;
     font-weight: 700;
@@ -121,6 +121,22 @@
   }
   .chip.live { color: var(--green); border-color: rgba(74, 222, 128, 0.35); background: rgba(74, 222, 128, 0.08); }
   .chip.wip { color: var(--accent); border-color: rgba(217, 119, 87, 0.35); background: var(--accent-soft); }
+
+  .feature {
+    display: block;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.15s ease;
+  }
+  .feature:hover { border-color: var(--accent); }
+  .feature img { display: block; width: 100%; aspect-ratio: 16 / 7; object-fit: cover; object-position: center 35%; }
+  .feature-body { padding: 22px; }
+  .feature-body h3 { font-size: 1.3rem; font-weight: 800; letter-spacing: 0.04em; margin-bottom: 6px; }
+  .feature-body p { color: var(--muted); font-size: 0.95rem; margin-bottom: 14px; }
 
   .how {
     background: var(--panel);
@@ -172,6 +188,18 @@
 </header>
 
 <section class="wrap">
+  <h2><span>▸</span>Spotlight</h2>
+  <a class="feature" href="banished.html">
+    <img src="img/banished/keyart.jpg" alt="BANISHED key art: four hunters facing two giant monsters in a dark forest">
+    <div class="feature-body">
+      <h3>BANISHED</h3>
+      <p>Four hunters. One monster that eats to grow. My biggest project: 87 days, 5,256 commits, and every system running end to end. Read the pitch, what's built and where it stands.</p>
+      <span class="chip wip">Read the pitch →</span>
+    </div>
+  </a>
+</section>
+
+<section class="wrap">
   <h2><span>▸</span>What's in the workshop</h2>
   <div class="grid">
     <a class="card card-link" href="https://play.google.com/store/apps/details?id=com.numcheck.app" target="_blank" rel="noopener">
@@ -186,12 +214,12 @@
       <p>Built to make home inspections faster and better documented, from walkthrough to report.</p>
       <div class="meta"><span class="chip">Flutter / Dart</span><span class="chip wip">In development</span></div>
     </div>
-    <div class="card">
+    <a class="card card-link" href="banished.html">
       <div class="emoji">👹</div>
-      <h3>4v1 Monster Hunt</h3>
-      <p>An asymmetric multiplayer game on Roblox. Four hunters, one monster, and my most active project right now.</p>
-      <div class="meta"><span class="chip">Roblox / Luau</span><span class="chip wip">In development</span></div>
-    </div>
+      <h3>BANISHED</h3>
+      <p>A 4v1 monster hunt on Roblox. Four armed hunters track one monster that eats to grow. Two monsters, four classes, two maps, and a first live five-player session where everyone wanted to go again.</p>
+      <div class="meta"><span class="chip">Roblox / Luau</span><span class="chip wip">Closed playtest · see the pitch ↗</span></div>
+    </a>
     <div class="card">
       <div class="emoji">📆</div>
       <h3>Life Visualizer</h3>

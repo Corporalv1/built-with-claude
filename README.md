@@ -20,9 +20,22 @@ My working repos are private while the projects are in development, but here's w
 | --- | --- | --- |
 | **[DrawWatch](https://play.google.com/store/apps/details?id=com.numcheck.app)**: automatic lottery draw checker with ticket scanning, group pools, and win notifications | Flutter / Dart | 🟢 [Live on Google Play](https://play.google.com/store/apps/details?id=com.numcheck.app) |
 | A home inspection app, built to make inspections faster and better documented | Flutter / Dart | 🔨 In development |
-| A 4v1 asymmetric multiplayer monster hunt game | Roblox / Luau | 🔨 In development (most active) |
+| **[BANISHED](https://corporalv1.github.io/built-with-claude/banished.html)**: a 4v1 asymmetric monster hunt on Roblox. Four armed hunters track one player-controlled monster that eats to evolve | Roblox / Luau | 🟠 [Closed playtest](https://corporalv1.github.io/built-with-claude/banished.html) (most active) |
 | A life visualizer, your whole life at a glance, week by week | Flutter / Dart | 🔨 In development |
 | Smaller experiments while I figure out what people actually want | Dart / TypeScript | 🧪 Ongoing |
+
+## 👹 Spotlight: BANISHED
+
+[![BANISHED key art](docs/img/banished/keyart.jpg)](https://corporalv1.github.io/built-with-claude/banished.html)
+
+My biggest project. Four hunters, one monster that eats to grow, and by the end of the match the hunted becomes the hunter. Built under my studio, Red Chevron Studios, starting 3 July 2026.
+
+- **Two monsters, four hunter classes, two maps**, all playable end to end: lobby, matchmaking, match, scoreboard, saved progress
+- **Computer, phone and controller**, each with its own controls and layout
+- **First live five-player session** on published Roblox servers on 15 September 2026. All five players wanted to go again
+- **5,256 commits in 87 days**, with 214 automated test suites running on every change
+
+**👉 [The full pitch: the game, what's built, where it stands, monetization, live-ops and roadmap](https://corporalv1.github.io/built-with-claude/banished.html)** ([PDF](https://corporalv1.github.io/built-with-claude/BANISHED-pitch.pdf))
 
 ## 🤝 How this works
 
