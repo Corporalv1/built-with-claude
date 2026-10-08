@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WHAT WE KEEP OUT — Red Chevron Studios</title>
+<meta name="description" content="WHAT WE KEEP OUT is a 4v1 asymmetric monster hunt on Roblox. Four armed hunters track one player-controlled monster that feeds on the forest to evolve. Pitch, current state and roadmap.">
+<meta property="og:title" content="WHAT WE KEEP OUT — a 4v1 monster hunt on Roblox">
+<meta property="og:description" content="Four hunters. One monster that eats to grow. Built in 97 days, in closed playtest, and every system is running.">
+<meta property="og:image" content="https://corporalv1.github.io/built-with-claude/img/banished/keyart.jpg">
+<link rel="canonical" href="https://corporalv1.github.io/built-with-claude/what-we-keep-out.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0c0f;
+    --panel: #14161b;
+    --panel-2: #1b1e25;
+    --line: #2a2e38;
+    --text: #ece8e0;
+    --muted: #a3a6ae;
+    --faint: #6f737d;
+    --red: #e3282f;
+    --red-soft: rgba(227, 40, 47, 0.12);
+    --red-line: rgba(227, 40, 47, 0.38);
+    --bone: #efe9dc;
+    --green: #5fd38d;
+    --violet: #a98bff;
+    --display: "Oswald", "Arial Narrow", Impact, sans-serif;
+    --body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--bone); text-decoration-color: var(--red-line); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--red); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 760px; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: flex-end;
+    background: #000 url("img/banished/keyart.jpg") center 30% / cover no-repeat;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(90deg, rgba(11,12,15,0.78) 0%, rgba(11,12,15,0.45) 42%, rgba(11,12,15,0) 70%),
+      linear-gradient(180deg, rgba(11,12,15,0.25) 0%, rgba(11,12,15,0.05) 35%, rgba(11,12,15,0.80) 74%, var(--bg) 100%);
+  }
+  .hero-inner { position: relative; padding: 120px 24px 56px; width: 100%; max-width: 1040px; margin: 0 auto; }
+  .studio {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--bone);
+    background: rgba(0,0,0,0.55);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 14px 6px 8px;
+  }
+  .studio img { width: 22px; height: auto; }
+  .logo { width: min(460px, 82vw); margin: 22px 0 14px; filter: drop-shadow(0 4px 24px rgba(0,0,0,0.9)); }
+  h1.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .lede {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.45rem, 3.6vw, 2.2rem);
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    max-width: 760px;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.85);
+  }
+  .lede em { font-style: normal; color: var(--red); }
+  .sub { margin-top: 14px; color: #d6d2ca; max-width: 680px; font-size: 1.05rem; text-shadow: 0 1px 12px rgba(0,0,0,0.9); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .chip {
+    font-size: 0.78rem; font-weight: 600;
+    padding: 5px 12px; border-radius: 999px;
+    background: rgba(20,22,27,0.82); border: 1px solid var(--line); color: var(--bone);
+  }
+  .chip.status { color: var(--green); border-color: rgba(95,211,141,0.4); }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .btn {
+    display: inline-block; font-weight: 700; font-size: 0.95rem;
+    padding: 12px 22px; border-radius: 10px; text-decoration: none;
+    min-height: 44px;
+  }
+  .btn.primary { background: var(--red); color: #fff; }
+  .btn.ghost { background: rgba(0,0,0,0.5); border: 1px solid var(--line); color: var(--bone); }
+  .btn:hover { filter: brightness(1.1); }
+
+  /* ---------- stats ---------- */
+  .stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px; margin: 40px auto 0;
+  }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+  .stat .num { font-family: var(--display); font-size: 1.9rem; font-weight: 600; color: var(--bone); line-height: 1.1; }
+  .stat .label { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+  .asof { color: var(--faint); font-size: 0.78rem; margin-top: 10px; }
+
+  /* ---------- sections ---------- */
+  section.wrap { padding-top: 72px; padding-bottom: 8px; }
+  .kicker {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 10px;
+  }
+  h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.12; letter-spacing: 0.005em;
+    margin-bottom: 16px;
+  }
+  h3 { font-family: var(--display); font-weight: 600; font-size: 1.3rem; letter-spacing: 0.01em; margin-bottom: 8px; }
+  p + p { margin-top: 12px; }
+  .muted { color: var(--muted); }
+  .big { font-size: 1.1rem; }
+  strong { color: var(--bone); }
+
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 16px; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+  .card p, .card li { color: var(--muted); font-size: 0.95rem; }
+  .card ul { padding-left: 18px; margin-top: 8px; }
+  .card li + li { margin-top: 5px; }
+  .card .tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 6px; }
+  .card.accent { border-color: var(--red-line); background: linear-gradient(180deg, var(--red-soft), var(--panel) 60%); }
+
+  /* loop */
+  .loop { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .steps { list-style: none; counter-reset: s; margin-top: 12px; }
+  .steps li { counter-increment: s; position: relative; padding: 0 0 14px 44px; color: var(--muted); font-size: 0.95rem; }
+  .steps li::before {
+    content: counter(s); position: absolute; left: 0; top: 0;
+    width: 30px; height: 30px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: var(--display); font-weight: 600; font-size: 0.95rem;
+    background: var(--panel-2); border: 1px solid var(--line); color: var(--bone);
+  }
+  .steps li strong { display: block; color: var(--bone); }
+  .monster .steps li::before { border-color: var(--red-line); color: var(--red); }
+
+  .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 18px; }
+  .flow div { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font-size: 0.85rem; color: var(--muted); }
+  .flow b { display: block; font-family: var(--display); font-weight: 600; letter-spacing: 0.04em; color: var(--bone); font-size: 1rem; margin-bottom: 2px; }
+
+  /* table */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; margin-top: 18px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 720px; }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); background: var(--panel); font-weight: 700; }
+  td { color: var(--muted); background: #101216; }
+  td:first-child { color: var(--bone); font-weight: 700; white-space: nowrap; }
+  td small { display: block; color: var(--faint); font-weight: 500; }
+  tr:last-child td { border-bottom: 0; }
+  @media (max-width: 720px) {
+    .table-wrap { overflow: visible; border: 0; }
+    table, thead, tbody, tr, td { display: block; min-width: 0; width: 100%; }
+    thead { display: none; }
+    tr { background: #101216; border: 1px solid var(--line); border-radius: 14px; padding: 6px 0; margin-bottom: 12px; }
+    td { background: transparent; border: 0; padding: 6px 16px; font-size: 0.93rem; }
+    td:first-child { font-family: var(--display); font-size: 1.2rem; font-weight: 600; padding-top: 10px; }
+    td[data-label]::before { content: attr(data-label); display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+  }
+
+  /* gallery */
+  .shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 18px; }
+  .shots figure { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .shots figure.wide { grid-column: 1 / -1; }
+  .shots img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; }
+  .shots figcaption { font-size: 0.82rem; color: var(--muted); padding: 10px 14px; }
+  .note { font-size: 0.8rem; color: var(--faint); margin-top: 10px; }
+
+  .lore { display: grid; grid-template-columns: 1.3fr 1fr; gap: 12px; margin-top: 12px; align-items: stretch; }
+  .lore .photo { position: relative; min-height: 220px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
+  .lore .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+  /* built list */
+  .built { columns: 2 320px; column-gap: 16px; margin-top: 18px; }
+  .built .card { break-inside: avoid; margin-bottom: 16px; }
+
+  /* proof */
+  .quote {
+    font-family: var(--display); font-weight: 500; font-size: clamp(1.3rem, 3vw, 1.75rem); line-height: 1.25;
+    border-left: 3px solid var(--red); padding: 4px 0 4px 18px; margin: 8px 0 20px; color: var(--bone);
+  }
+
+  /* money */
+  .price { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 0.92rem; color: var(--muted); }
+  .price:last-child { border-bottom: 0; }
+  .price b { color: var(--bone); white-space: nowrap; }
+  .never { margin-top: 16px; padding: 14px 16px; border: 1px solid var(--red-line); border-radius: 12px; background: var(--red-soft); font-size: 0.92rem; }
+
+  /* timeline */
+  .timeline { list-style: none; margin-top: 20px; border-left: 2px solid var(--line); padding-left: 22px; }
+  .timeline li { position: relative; padding-bottom: 22px; }
+  .timeline li::before {
+    content: ""; position: absolute; left: -29px; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--bg); border: 2px solid var(--faint);
+  }
+  .timeline li.done::before { background: var(--bone); border-color: var(--bone); }
+  .timeline li.now::before { background: var(--red); border-color: var(--red); box-shadow: 0 0 0 4px var(--red-soft); }
+  .timeline .when { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+  .timeline li.now .when { color: var(--red); }
+  .timeline h4 { font-family: var(--display); font-weight: 600; font-size: 1.15rem; margin: 2px 0 4px; }
+  .timeline p { color: var(--muted); font-size: 0.93rem; }
+
+  footer { padding: 72px 0 80px; margin-top: 56px; border-top: 1px solid var(--line); }
+  footer .contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 18px; }
+  footer .contact div { color: var(--muted); font-size: 0.92rem; }
+  footer .contact b { display: block; color: var(--bone); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
+  .fine { margin-top: 36px; color: var(--faint); font-size: 0.78rem; }
+
+  @media (max-width: 720px) {
+    .wrap { padding: 0 16px; }
+    .hero {
+      min-height: 0;
+      background:
+        linear-gradient(180deg, rgba(11,12,15,0) 0, rgba(11,12,15,0) 30vw, var(--bg) 56.25vw),
+        url("img/banished/keyart.jpg") center top / 100% auto no-repeat,
+        var(--bg);
+    }
+    .hero::before { display: none; }
+    .hero-inner { padding: 48vw 16px 40px; }
+    .studio { font-size: 11px; letter-spacing: 0.1em; }
+    .logo { width: 88vw; margin: 14px 0 12px; }
+    .flow { grid-template-columns: 1fr; }
+    .shots { grid-template-columns: 1fr; }
+    .shots img { aspect-ratio: 16 / 8; }
+    .lore { grid-template-columns: 1fr; }
+    .lore .photo { min-height: 0; aspect-ratio: 4 / 3; }
+    section.wrap { padding-top: 52px; }
+    .btn { flex: 1 1 100%; text-align: center; }
+  }
+
+  /* The PDF is a deck: zero page margin so the dark page runs edge to edge,
+     and every section starts its own page with its own inner margin. */
+  @media print {
+    @page { size: A4; margin: 0; }
+    html, body { background: var(--bg) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-size: 12.5px; line-height: 1.5; }
+    .wrap { max-width: none; padding: 0 14mm; }
+    .hero { min-height: 0; height: 168mm; background-position: center 25%; }
+    .hero-inner { max-width: none; padding: 0 14mm 10mm; }
+    .logo { width: 92mm; margin: 12px 0 8px; }
+    .lede { font-size: 24px; max-width: 160mm; }
+    .sub { font-size: 13.5px; max-width: 160mm; }
+    .cta { display: none; }
+    .stats { grid-template-columns: repeat(6, 1fr); margin-top: 12mm; gap: 8px; }
+    .stat { padding: 10px 12px; }
+    .stat .num { font-size: 24px; }
+    main > section.wrap { break-before: page; padding-top: 14mm; padding-bottom: 6mm; }
+    footer { margin-top: 6mm; padding: 8mm 0 10mm; break-inside: avoid; }
+    h2 { font-size: 28px; break-after: avoid; margin-bottom: 12px; }
+    h3 { font-size: 17px; }
+    .kicker { margin-bottom: 6px; }
+    .card { padding: 14px 16px; }
+    .card p, .card li { font-size: 12px; }
+    .muted.narrow, .narrow { max-width: none; }
+    .card, .stat, figure, .timeline li, .flow div, tr, .quote { break-inside: avoid; }
+    .grid2, .grid3, .loop { gap: 10px; }
+    .grid2 { grid-template-columns: 1fr 1fr; }
+    .flow div { font-size: 11.5px; padding: 10px; }
+    .shots { gap: 8px; margin-top: 10px; }
+    .shots { grid-template-columns: repeat(4, 1fr); }
+    .shots img { aspect-ratio: 16 / 9; }
+    .shots figure.wide { grid-column: 1 / -1; }
+    .shots figure.wide img { aspect-ratio: 16 / 5.4; }
+    .shots figcaption { padding: 5px 10px; font-size: 11px; }
+    .lore { grid-template-columns: 3fr 1fr; }
+    .lore .photo { min-height: 0; }
+    .built { columns: 3; column-gap: 10px; margin-top: 10px; }
+    .built .card { margin-bottom: 10px; }
+    .built .card li { font-size: 11px; }
+    .built .card li + li { margin-top: 3px; }
+    .table-wrap { overflow: visible; }
+    table { min-width: 0; font-size: 11.5px; }
+    th, td { padding: 8px 10px; }
+    .quote { font-size: 18px; }
+    .timeline { margin-top: 10px; }
+    .timeline li { padding-bottom: 14px; }
+    .timeline p { font-size: 12.5px; }
+    .price { font-size: 12px; padding: 6px 0; }
+    .never { font-size: 12px; }
+    .note, .asof, .fine { font-size: 10.5px; }
+    a { text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="studio"><img src="img/banished/chevron.png" alt="">Red Chevron Studios · on Roblox</span>
+    <h1 class="sr">WHAT WE KEEP OUT</h1>
+    <img class="logo" src="img/banished/wordmark-wwko.png" alt="WHAT WE KEEP OUT">
+    <p class="lede">Four hunters. One monster that <em>eats to grow.</em> By the end of the match, the hunted becomes the hunter.</p>
+    <p class="sub">WHAT WE KEEP OUT is a 4v1 asymmetric monster hunt. Four first-person hunters with real guns and a plan track a player-controlled monster through a living forest, while it feeds on wildlife and fallen hunters to evolve through three stages.</p>
+    <div class="chips">
+      <span class="chip status">● In closed playtest</span>
+      <span class="chip">5 players per match</span>
+      <span class="chip">12-minute hunt</span>
+      <span class="chip">Computer · Phone · Controller</span>
+      <span class="chip">Free to play, cosmetics only</span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="WHAT-WE-KEEP-OUT-pitch.pdf">Download the pitch (PDF)</a>
+      <a class="btn ghost" href="#state">Where it stands today</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="num">97</div><div class="label">days from first line of code</div></div>
+    <div class="stat"><div class="num">7,102</div><div class="label">commits</div></div>
+    <div class="stat"><div class="num">358k</div><div class="label">lines of type-checked game code</div></div>
+    <div class="stat"><div class="num">240</div><div class="label">automated test suites on every change</div></div>
+    <div class="stat"><div class="num">2 · 4 · 2</div><div class="label">monsters · hunter classes · maps</div></div>
+    <div class="stat"><div class="num">5 / 5</div><div class="label">live testers wanted another match</div></div>
+  </div>
+  <p class="asof">Counts measured from the project repository on 8 October 2026. First commit 3 July 2026.</p>
+</div>
+
+<!-- ============ WHY ============ -->
+<section class="wrap">
+  <div class="kicker">The opportunity</div>
+  <h2>Roblox has the audience for a monster hunt. Nobody has built the fight-back version.</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>The gap</h3>
+      <p>Every asymmetric game on Roblox is a corridor chase: survivors run and hide. The appetite is proven: Forsaken, a hardcore asymmetric game, reached roughly 80,000 players at once and billions of visits. What does not exist on Roblox is the other half of the genre: <strong>armed hunters with a plan, against a monster that grows.</strong></p>
+      <p>On PC and console that formula had a devoted audience and a famous collapse. We studied why those games died and designed WHAT WE KEEP OUT against each cause, starting with the first rule below.</p>
+    </div>
+    <div class="card accent">
+      <h3>The one rule</h3>
+      <p class="big"><strong>Both sides must be fun. If only one side is having fun, the game dies.</strong></p>
+      <p>A 4v1 needs four hunters for every monster, so the hunter side carries four times the population. The bar every feature has to clear: <em>a solo hunter with three strangers and no mic still has fun in a match they lose.</em></p>
+    </div>
+  </div>
+  <div class="grid3" style="margin-top:16px">
+    <div class="card"><div class="tag">Shooter</div><p>Five hand-built guns with first-person arms, aim-down-sights and authored reloads. Hunters fight back; that is the point.</p></div>
+    <div class="card"><div class="tag">Depth</div><p>A tracking economy (wound trails, birds, bells, footprints), a three-stage evolution with upgrade choices, and four classes that need each other.</p></div>
+    <div class="card"><div class="tag">Older audience</div><p>Atmospheric horror, skill-based combat and short, replayable matches. Built for teens and adults who want a game with depth.</p></div>
+  </div>
+</section>
+
+<!-- ============ LOOP ============ -->
+<section class="wrap">
+  <div class="kicker">Core loop</div>
+  <h2>Two different games in one match</h2>
+  <p class="muted narrow">A monster player and a hunter player want different things. Each side has its own complete loop, and they collide in the fight.</p>
+  <div class="loop" style="margin-top:18px">
+    <div class="card monster">
+      <h3>Play the Monster</h3>
+      <ol class="steps">
+        <li><strong>Stalk.</strong> Start weak and hunted. Crouch-stalk, wall-crawl and leap through the forest while four armed players look for you.</li>
+        <li><strong>Feed.</strong> Kill deer, stags and bears (they fight back), and feed on downed hunters to fill your meat meter.</li>
+        <li><strong>Mutate.</strong> Cocoon and evolve through three stages, growing larger, tougher and stronger, and spend points to upgrade your abilities.</li>
+        <li><strong>Break the Relic.</strong> At Stage 3, smash the hunters' Relic, or wipe all four hunters, to win.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Play a Hunter</h3>
+      <ol class="steps">
+        <li><strong>Track.</strong> Read the woods: glowing wound trails, startled birds, tripwire bells, footprints, and the silence where it already ate.</li>
+        <li><strong>Cage.</strong> Close in and raise the team Cage, a plasma jail that pins the monster so the fight happens on your terms.</li>
+        <li><strong>Fight.</strong> Four classes (damage, healer, control, support) combine guns, gadgets and class abilities.</li>
+        <li><strong>Survive.</strong> Revive downed teammates, hold the Relic, and kill it before Stage 3, or run out the clock.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="flow">
+    <div><b>Drop</b>The monster spawns alone; hunters insert across the map.</div>
+    <div><b>Hunt</b>A 12-minute clock. The monster eats; the hunters track.</div>
+    <div><b>Contain</b>The Cage drops. A real fight, or an expensive escape.</div>
+    <div><b>Mutate</b>Stage 1 → 2 → 3. The power curve is the drama.</div>
+    <div><b>Endgame</b>The Relic. Ties go to the hunters, so stalling never wins.</div>
+  </div>
+  <p class="note">No player is ever left with nothing to do: a downed hunter crawls and calls out intel, a dead one spectates their team and respawns on a timer, and a caged monster can always pay to break out.</p>
+</section>
+
+<!-- ============ ROSTER ============ -->
+<section class="wrap page-break">
+  <div class="kicker">The roster</div>
+  <h2>Two monsters, four hunter classes</h2>
+  <div class="grid2">
+    <div class="card accent">
+      <div class="tag">Monster 1</div>
+      <h3>The Wendigo</h3>
+      <p>A gaunt spirit of famine that grows with every meal: Starved, then Ravenous, then Gorged. <strong>Ground Slam</strong> scatters a clumped team, <strong>Scream</strong> interrupts heals and floods the map with false tracking noise, <strong>Snatch</strong> drags one hunter into the dark, and <strong>Rush</strong> tramples everything in a line. <strong>Sense</strong> reveals prey through walls.</p>
+    </div>
+    <div class="card accent">
+      <div class="tag">Monster 2</div>
+      <h3>The Long Man</h3>
+      <p>A second monster built on positioning and psychic pressure, pickable today. He <strong>Blinks</strong> instead of running, his Sense freezes a psychic image of the hunters, <strong>Echoes</strong> release copies of him to confuse pursuit, <strong>Long Reach</strong> drags a caught hunter while he keeps moving, and <strong>Head Pain</strong> leaves the team dazed.</p>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Class</th><th>Role</th><th>Weapons</th><th>Unique gear</th><th>Class ability</th></tr></thead>
+      <tbody>
+        <tr><td>Executioner<small>Damage</small></td><td data-label="Role">The threat that forces the monster to back off</td><td data-label="Weapons">Relic Rifle · Chain Whip</td><td data-label="Unique gear">Brand: hits stack sigils, then detonate</td><td data-label="Class ability">Iron Resolve: a damage-soaking stance</td></tr>
+        <tr><td>Sanctum<small>Healer</small></td><td data-label="Role">All healing and sustain</td><td data-label="Weapons">Hexlock Pistol · Surgical Vial Launcher (lobbed area heals)</td><td data-label="Unique gear">Healing Aura: a smashable heal field</td><td data-label="Class ability">Mending Burst: an emergency group heal</td></tr>
+        <tr><td>Jailer<small>Control</small></td><td data-label="Role">Find the monster, then pin it</td><td data-label="Weapons">Repeating Crossbow (wounds leave a glowing trail) · Tripwire Chimes (alarm bells)</td><td data-label="Unique gear">The Net: a harpoon snare</td><td data-label="Class ability">Flare: lights a wide area and reveals the monster inside it</td></tr>
+        <tr><td>Sage<small>Support</small></td><td data-label="Role">Force multiplier and protection</td><td data-label="Weapons">Consecrated Scattergun (pump shotgun) · Banishing Lantern</td><td data-label="Unique gear">Decoy: a double that runs while she vanishes</td><td data-label="Class ability">The Veil: hides hunters from the monster's Sense</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Every class is two weapons, one unique piece of gear and one class ability. Every class, and both monsters, live in configuration rather than custom code, which is what makes a new character a content drop instead of a rewrite.</p>
+</section>
+
+<!-- ============ WORLD ============ -->
+<section class="wrap">
+  <div class="kicker">The world</div>
+  <h2>A forest that tells on you</h2>
+  <p class="muted narrow">Most Roblox monster games are corridors. WHAT WE KEEP OUT is an open-world stalk: information warfare across real terrain. Wildlife is a system, not scenery. Herds scatter and birds lift when the monster moves, and the woods go quiet where it has already eaten.</p>
+  <div class="shots">
+    <figure class="wide"><img src="img/banished/shot-wendigo.jpg" alt="The Wendigo stalking through fog in the forest, seen from the monster's camera" loading="lazy"><figcaption>Playing the Wendigo, Stage 1, stalking through the fog.</figcaption></figure>
+    <figure><img src="img/banished/shot-sense.jpg" alt="The monster's Sense ability outlining the world in violet" loading="lazy"><figcaption>Sense: the monster's pulse reveals prey through the trees.</figcaption></figure>
+    <figure><img src="img/banished/shot-reservoir.jpg" alt="An old mill on a foggy reservoir in BLACKPINE" loading="lazy"><figcaption>BLACKPINE: the reservoir and mill.</figcaption></figure>
+    <figure><img src="img/banished/shot-basin9.jpg" alt="Aerial view of an abandoned village in BASIN 9" loading="lazy"><figcaption>BASIN 9: the abandoned village.</figcaption></figure>
+    <figure><img src="img/banished/shot-basin9-road.jpg" alt="A rusted tanker truck at a checkpoint in BASIN 9" loading="lazy"><figcaption>BASIN 9: the quarantine road.</figcaption></figure>
+  </div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card">
+      <h3>Two maps, live now</h3>
+      <p><strong>BLACKPINE</strong> is a dusk boreal forest with a reservoir and dam, a railbed and trestles, a mill, a flume, a quarry and a hunters' camp. <strong>BASIN 9</strong> is a forested, abandoned nuclear-industrial disaster zone. Every match rolls one of the two.</p>
+      <p>Random wet and dry spells, storms that build, water, day-long ambience and rare one-off sounds (a far-off wolf, a creaking pine) play on each player's own clock.</p>
+    </div>
+    <div class="card">
+      <h3>A food chain that fights back</h3>
+      <p><strong>Deer</strong> flee fast and feed a little. <strong>Stags</strong> fight back and feed more. <strong>Bears</strong> are hostile to everyone and are the biggest meal on the map. Hunters who shoot a herd leave bait behind, not a denied meal.</p>
+    </div>
+  </div>
+  <div class="lore">
+    <div class="card">
+      <h3>A world with a story</h3>
+      <p>The lobby is a ranger station at the edge of a closed forest, with its own cast (Kessler, Pell and Brisco) and <strong>Case Files</strong>: missing-person posters, trail-camera photos and field notes that tell the story of what is out there, one discovery at a time.</p>
+    </div>
+    <div class="photo"><img src="img/banished/prop-trailcam.jpg" alt="An in-game trail-camera photo of a tall figure between the trees" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ============ BUILT ============ -->
+<section class="wrap page-break" id="built">
+  <div class="kicker">Everything built so far</div>
+  <h2>This is not a prototype. Every system is running.</h2>
+  <p class="muted narrow">A full match runs end to end today: five players enter from the lobby, the server assigns one monster and four hunters, the match plays out on either map, and it ends on a scoreboard whose result is saved to every player's profile.</p>
+  <div class="built">
+    <div class="card">
+      <h3>Combat and characters</h3>
+      <ul>
+        <li>Four complete hunter kits: 16 slots, five guns with first-person arms, aim-down-sights and aimed reloads</li>
+        <li>Inspect animations for held guns and gear, plus rare 2% reload gags</li>
+        <li>Two monsters with full ability sets, traversal (leap, wall-crawl, crouch) and a three-stage evolution with upgrade choices</li>
+        <li>Revives, a downed state, pings, sprint, a traversal rig with dodge bursts, and the team Cage</li>
+        <li>Server-authoritative damage: a client never decides whether it hit</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Match and online</h3>
+      <ul>
+        <li>A match state machine: lobby, drop, hunt, contain, endgame, post-match</li>
+        <li>Cross-server matchmaking with a global queue and teleports into match servers</li>
+        <li>Parties that queue together, with our own invite panel and Roblox friend invites</li>
+        <li>Role preferences with a fair monster rotation: nobody is stuck in a role they hate</li>
+        <li>Spectating, leaver and idle handling, and a post-match scoreboard</li>
+        <li>Bot hunters fill a thin queue; VIP hosts run private matches</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Lobby and first-time players</h3>
+      <ul>
+        <li>A separate, explorable lobby: find a match from anywhere, the party radio desk, the Store</li>
+        <li>A training range with live wildlife, and a two-sided orientation course</li>
+        <li>A guided first round, Gear Up and Field Notes archives, and Case Files lore</li>
+        <li>Characters in the lobby who walk, work and turn to face you when you talk to them</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Progression</h3>
+      <ul>
+        <li>XP from every match drives level, eight rank tiers and titles</li>
+        <li>Scrip currency from every match; a loss pays nearly as much as a win</li>
+        <li>Weekly challenges on their own menu, in the lobby and in the match</li>
+        <li>A cosmetic locker and shop, a VIP pass, and a saved last-match summary</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Every platform, its own build</h3>
+      <ul>
+        <li><strong>Phone:</strong> our own touch buttons with a separate layout for each role, an editable layout, touch aim assist and phone-specific HUD arrangements</li>
+        <li><strong>Controller:</strong> every menu works on a gamepad, with pad-specific bindings</li>
+        <li><strong>Computer:</strong> full keyboard and mouse, rebindable keys</li>
+        <li>Settings: graphics presets, HUD size, reticle and audio accessibility</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Running it live</h3>
+      <ul>
+        <li>Kill switches for each map, matchmaking, the shop and rewards, flippable without a new build</li>
+        <li>A saved record of every match: result, every player's stats and server performance</li>
+        <li>Incident records, ban tools and server-side developer permissions</li>
+        <li>Every request from a player's device is validated, bounded and rate-limited on the server</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Engineering quality</h3>
+      <ul>
+        <li>Every one of the 2,644 source files is strictly type-checked</li>
+        <li>240 automated test suites and a CI pipeline run on every change</li>
+        <li>Tuning numbers live in config, so balance changes never touch game logic</li>
+        <li>Internal audits on 27 September and 7 October; the second set the pre-launch fixes</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATE / PROOF ============ -->
+<section class="wrap" id="state">
+  <div class="kicker">Where it stands today</div>
+  <h2>The question is no longer "is it fun?"</h2>
+  <p class="quote">"All five players had genuine fun and wanted to go again immediately after the fourth match."</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>Proven</h3>
+      <ul>
+        <li><strong>Several closed beta sessions</strong> through August 2026, all positive.</li>
+        <li><strong>The first live five-player session</strong> on published Roblox servers, 15 September 2026: four matches across both maps.</li>
+        <li>Every player's pay, XP and match record saved exactly once.</li>
+        <li>Matchmaking, arrival and match records ran with no incidents.</li>
+        <li>The server held about 60 frames a second with five players and a full herd of wildlife.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Honest about what's next</h3>
+      <ul>
+        <li>The hunters won all four live matches, and nobody called it unfair. We tuned the monster's early game right after.</li>
+        <li>No match has reached Stage 3 with real players yet; the next session tests it.</li>
+        <li>The game is not public yet. Launch needs the fixes from the 7 October launch audit, a certified release, a second live session and a real-phone performance baseline.</li>
+        <li>Matchmaking across two live lobby servers, purchases, crash-rejoin, bot hunters and private matches still need proof on published servers.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MONEY ============ -->
+<section class="wrap page-break" id="money">
+  <div class="kicker">Monetization</div>
+  <h2>Free to play. Cosmetics only. Never pay-to-win.</h2>
+  <p class="muted narrow">In a 4v1, anything sold as power ruins the match for the other four players. Power lives inside the match (the monster's evolution); identity lives outside it (skins, titles, emotes).</p>
+  <div class="grid2" style="margin-top:18px">
+    <div class="card" id="money-live">
+      <div class="tag">Live in the build today</div>
+      <h3>A two-currency cosmetic shop</h3>
+      <p>Every cosmetic can be earned with Scrip, which every match pays (a loss pays nearly as much as a win), or bought with Robux. 102 priced items today:</p>
+      <div style="margin-top:10px">
+        <div class="price"><span>Premium monster bodies (7)</span><b>R$400 · 4,000 Scrip</b></div>
+        <div class="price"><span>Premium gun skins, with their own effects (8)</span><b>R$400 · 4,000 Scrip</b></div>
+        <div class="price"><span>Monster recolours (12)</span><b>R$250 · 1,500 Scrip</b></div>
+        <div class="price"><span>Hunter outfits (12)</span><b>R$200 · 1,000 Scrip</b></div>
+        <div class="price"><span>Weapon finishes (36)</span><b>R$99 · 500 Scrip</b></div>
+        <div class="price"><span>Emotes (27)</span><b>R$50 · 250 Scrip</b></div>
+      </div>
+      <p style="margin-top:10px">Grind or pay: a premium skin is about 53 matches of play, or R$400. Six Robux products and the VIP pass are live in the build; the first real purchase on a public server is part of launch prep.</p>
+    </div>
+    <div class="card" id="money-plan">
+      <div class="tag">Live now, and what comes next</div>
+      <h3>Pass, seasons and roster</h3>
+      <ul>
+        <li><strong>VIP pass (on sale since 7 October, R$599):</strong> +15% match XP (never currency), 8 emote slots instead of 4, a skull mark by your name and a burning name when you play the monster, a voucher for one skin of your choice, and hosting private matches with custom rules.</li>
+        <li><strong>A seasonal cosmetic track</strong> with themed skins each season.</li>
+        <li><strong>New monsters and hunters</strong> unlockable with either currency.</li>
+        <li><strong>Monster skins stay the lead product.</strong> In this genre, monster players are the biggest spenders, and every skin is seen by the four hunters it is chasing.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="never"><strong>Never sold:</strong> damage, health, abilities, extra respawns, match advantages or loot boxes. The genre's graveyard is full of games that tried.</div>
+</section>
+
+<!-- ============ LIVE OPS ============ -->
+<section class="wrap" id="liveops">
+  <div class="kicker">Live operations</div>
+  <h2>Built to update every week</h2>
+  <div class="grid2">
+    <div class="card">
+      <div class="tag">Already built</div>
+      <h3>The machinery is in place</h3>
+      <ul>
+        <li><strong>Weekly challenges:</strong> five rotating sets; players pick three of five goals for XP and Scrip. This is the deliberate return hook. There is no daily login reward, because a 4v1 needs players queuing together, not just logging in.</li>
+        <li><strong>Case Files:</strong> 23 lore entries that reveal the story over time.</li>
+        <li><strong>Kill switches</strong> for purchases, matchmaking, rewards and each map, flipped live without a new build.</li>
+        <li><strong>Match records and analytics:</strong> every match saves its result, each player's stats and server performance, plus onboarding-funnel and shop analytics.</li>
+        <li><strong>Live balance tuning</strong> without a new build is built and held in reserve for after launch.</li>
+        <li><strong>Bot hunters</strong> fill a thin queue, so the five-player match starts even before the player base is big.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="tag">The content cadence</div>
+      <h3>New monsters are the hype spike</h3>
+      <ul>
+        <li><strong>Characters are data, not code.</strong> The Long Man went from settled design to pickable in the match in about a week, without touching the Wendigo. That is the business model: a new monster is a content drop, not a rewrite.</li>
+        <li><strong>Monster concepts on file:</strong> the Jersey Devil (verticality), the Sasquatch (it attacks the hunters' tracking) and the Rougarou (contagion).</li>
+        <li><strong>A second character for every hunter class</strong>, each with its own kit.</li>
+        <li><strong>Dynamic map events:</strong> one announced hazard at a time (a zone closing, a storm that gives the monster cover to feed) as a cheap weekly change.</li>
+        <li><strong>More maps:</strong> each map is its own place that joins the queue's roll, exactly as BASIN 9 did.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section class="wrap" id="timeline">
+  <div class="kicker">Timeline</div>
+  <h2>97 days in, and the road to launch</h2>
+  <ol class="timeline">
+    <li class="done"><div class="when">July 2026</div><h4>From four grey blocks to a game</h4><p>First code on 3 July; the feed-and-evolve loop the next day. Then the design thesis, the four hunter kits, saved player profiles, the BLACKPINE map rebuild, the first phone controls and the separate lobby place.</p></li>
+    <li class="done"><div class="when">August 2026</div><h4>A full game</h4><p>Cross-server matchmaking (5 August), account progression (levels, ranks, titles), the shop with Scrip earning switched on, and the second monster, the Long Man, pickable from 28 August. Several closed beta sessions, all positive.</p></li>
+    <li class="done"><div class="when">September 2026</div><h4>Real players, real servers</h4><p>BASIN 9 joins the map rotation and the Robux shop opens (3 September). The first live five-player session on published servers (15 September). Separate phone and controller layouts for the HUD, menus and controls. A full internal audit on 27 September found no launch blockers. The final name, WHAT WE KEEP OUT (28 September), then bot hunters and private matches (29 September).</p></li>
+    <li class="done"><div class="when">October 2026</div><h4>A store worth opening</h4><p>The Store and My Locker rebuilt for computer, phone and console, premium gun skins with their own effects, and the VIP pass on sale (7 October). A launch-focused audit on 7 October set the list of fixes to make before going public.</p></li>
+    <li class="now"><div class="when">Now</div><h4>Launch prep</h4><p>The launch audit's fixes, a second live session that reaches Stage 3, a certified release, a real-phone performance baseline, and live proof of purchases, crash-rejoin and matchmaking across two lobby servers.</p></li>
+    <li><div class="when">Target: Q4 2026</div><h4>Public launch</h4><p>The experience goes public. This is where launch support and user acquisition make the difference, because the first weeks decide whether the queue fills.</p></li>
+    <li><div class="when">After launch</div><h4>Season one</h4><p>A seasonal cosmetic track, the third monster, and dynamic map events.</p></li>
+  </ol>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="wrap page-break" id="team">
+  <div class="kicker">The team</div>
+  <h2>One director, and a disciplined AI engineering pipeline</h2>
+  <div class="grid2">
+    <div class="card accent">
+      <div class="tag">Founder & creative director</div>
+      <h3>Anthony Claudio</h3>
+      <p>Owns the design, the feel and every final call. Nothing counts as done until he has played it: every weapon, camera and animation in the game was accepted or rejected by him in Roblox Studio. He runs the playtests, the roadmap and the studio, Red Chevron Studios.</p>
+    </div>
+    <div class="card">
+      <div class="tag">Engineering</div>
+      <h3>AI coding agents, run like a team</h3>
+      <p>The code is written by AI coding agents (Anthropic's Claude Code, with OpenAI's Codex on some tasks) working under a written engineering rulebook: the server owns gameplay truth, every tuning number lives in config, and no change lands until the automated gate passes. That is how one director produced 7,102 commits in 97 days without the codebase rotting.</p>
+    </div>
+    <div class="card">
+      <div class="tag">Art and audio</div>
+      <h3>An original look, with receipts</h3>
+      <p>Original characters, monsters, maps, logo and UI. The pipeline mixes custom 3D models and animation, AI-assisted concept, texture and sound generation, and licensed source assets. Every asset is tracked with a written receipt and published under the studio's Roblox group.</p>
+    </div>
+    <div class="card">
+      <div class="tag">Playtesters</div>
+      <h3>Real players, early</h3>
+      <p>A closed beta group has played every major version, and a community builder, bigwuggy, has helped build the lobby from the start. Every live match writes a record of its result, each player's stats and server performance, so each session produces data as well as opinions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ASK ============ -->
+<section class="wrap" id="ask">
+  <div class="kicker">What support would unlock</div>
+  <h2>A 4v1 lives or dies on having five people in the queue at once</h2>
+  <p class="muted narrow">The design problem that killed this genre elsewhere is population: a match needs five players, at once, in one queue. The game is built. What decides whether it lives is the first weeks after it goes public.</p>
+  <div class="grid2" style="margin-top:18px">
+    <div class="card accent">
+      <h3>Launch-day players</h3>
+      <p>Help with on-platform and off-platform user acquisition at launch turns the genre's biggest risk, empty queues, into its biggest strength: a full lobby of people who all want to go again.</p>
+    </div>
+    <div class="card">
+      <h3>Expert eyes on retention and monetization</h3>
+      <p>Weekly challenges, the cosmetic shop, the VIP pass and progression are built. We want Roblox's view of what older players stay for, and where a season track and passes should sit.</p>
+    </div>
+    <div class="card">
+      <h3>Phones and low-end devices</h3>
+      <p>Phone controls and layouts are built for every role. Guidance on rendering and memory budgets for mid-range phones would shorten the road to a certified release.</p>
+    </div>
+    <div class="card">
+      <h3>The "Wait, that's Roblox?" bar</h3>
+      <p>The monsters are custom-built creatures; the hunters are R15 bodies with custom outfits, gear and first-person arms. We want to push hunter fidelity further, and would value guidance on high-fidelity avatars.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Talk to us</h2>
+    <p class="muted narrow">WHAT WE KEEP OUT is in closed playtest. Playtest access, a live walkthrough in Roblox Studio or a deeper look at any system is available on request.</p>
+    <div class="contact">
+      <div><b>Founder & creative director</b>Anthony Claudio</div>
+      <div><b>Studio</b><a href="https://www.roblox.com/communities/279265964">Red Chevron Studios</a> on Roblox</div>
+      <div><b>GitHub</b><a href="https://github.com/Corporalv1">@Corporalv1</a></div>
+    </div>
+    <p class="fine">WHAT WE KEEP OUT is the final name (until 28 September 2026 the game's working title was BANISHED). Screenshots are in-engine captures from development builds. The game, its characters, lore and art are original works of Red Chevron Studios. Figures on this page were read from the project on 8 October 2026. <a href="./">More from this builder</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
