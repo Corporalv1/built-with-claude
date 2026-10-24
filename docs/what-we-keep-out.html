@@ -183,6 +183,11 @@
   .shots figure.wide { grid-column: 1 / -1; }
   .shots img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; }
   .shots figcaption { font-size: 0.82rem; color: var(--muted); padding: 10px 14px; }
+  .teaser { margin-top: 18px; }
+  .teaser figure { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; margin: 0; }
+  .teaser video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+  .teaser .print-poster { display: none; }
+  .teaser figcaption { font-size: 0.82rem; color: var(--muted); padding: 10px 14px; }
   .note { font-size: 0.8rem; color: var(--faint); margin-top: 10px; }
 
   .lore { display: grid; grid-template-columns: 1.3fr 1fr; gap: 12px; margin-top: 12px; align-items: stretch; }
@@ -283,6 +288,10 @@
     .shots figure.wide img { aspect-ratio: 16 / 5.4; }
     .shots.update img { aspect-ratio: 4 / 3.4; }
     .shots figcaption { padding: 5px 10px; font-size: 11px; }
+    .teaser { margin-top: 8px; }
+    .teaser video { display: none; }
+    .teaser .print-poster { display: block; width: 100%; aspect-ratio: 16 / 3; object-fit: cover; }
+    .teaser figcaption { padding: 5px 10px; font-size: 11px; }
     .lore { grid-template-columns: 3fr 1fr; }
     .lore .photo { min-height: 0; }
     .built { columns: 3; column-gap: 10px; margin-top: 10px; }
@@ -557,7 +566,15 @@
     <figure><img src="img/banished/new-unlit-file.jpg" style="object-position:100% 50%" alt="The Unlit's Field Notes file: no file, his portrait kept in darkness" loading="lazy"><figcaption>His Field Notes file, kept in the dark.</figcaption></figure>
     <figure><img src="img/banished/new-campfire-title.jpg" style="object-position:0% 50%" alt="The title screen: the camp's crew around a campfire at night under the WHAT WE KEEP OUT title" loading="lazy"><figcaption>The title screen: the campfire, at night.</figcaption></figure>
   </div>
-  <!-- [892] TEASER SLOT: the teaser ([740]) goes here once its cut is final; nothing is linked until then. -->
+  <div class="teaser">
+    <figure>
+      <video controls preload="none" playsinline poster="img/banished/teaser-poster.jpg" aria-label="The first WHAT WE KEEP OUT teaser">
+        <source src="img/banished/teaser.mp4" type="video/mp4">
+      </video>
+      <img class="print-poster" src="img/banished/teaser-poster.jpg" alt="The Wendigo standing in the fog, caught in a hunter's flashlight: a frame from the first teaser">
+      <figcaption>The first teaser: 57 seconds, every frame the real game.</figcaption>
+    </figure>
+  </div>
 </section>
 
 <!-- ============ STATE / PROOF ============ -->
