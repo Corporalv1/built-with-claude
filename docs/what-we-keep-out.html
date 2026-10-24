@@ -199,6 +199,7 @@
   .hero-media .kicker { margin-top: 30px; }
   .hero-media h2 { margin-bottom: 4px; }
   .shots.gallery img { aspect-ratio: 16 / 9; object-fit: cover; }
+  .print-only { display: none; }
 
   .lore { display: grid; grid-template-columns: 1.3fr 1fr; gap: 12px; margin-top: 12px; align-items: stretch; }
   .lore .photo { position: relative; min-height: 220px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
@@ -307,7 +308,10 @@
     .teaser .print-poster { display: block; width: 100%; aspect-ratio: 16 / 3; object-fit: cover; }
     .teaser figcaption { padding: 5px 10px; font-size: 11px; }
     /* page 1 carries the title, the teaser, the gallery and the stats */
-    .hero { height: 122mm; }
+    .hero { height: 116mm; }
+    .shots.gallery { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .hero-media .teaser { display: none; } /* a video cannot play on paper: the note says where it is */
+    .print-only { display: inline; }
     .hero-media .print-poster { object-position: 50% 22%; }
     .hero-media { padding-top: 5mm; }
     .hero-media .kicker { margin-top: 5mm; }
@@ -379,10 +383,12 @@
   <div class="shots gallery">
     <figure><img src="img/banished/play-flashlight.jpg" alt="First-person hunter view with the full HUD: a rifle raised, the flashlight on the Wendigo standing in the foggy forest, the Cage prompt over it" loading="lazy"><figcaption>Hunter, first person: the flashlight finds the Wendigo in the fog, and the Cage is one key away.</figcaption></figure>
     <figure><img src="img/banished/play-crossbow.jpg" alt="The Jailer's first-person view: a repeating crossbow raised at the Wendigo in the rain, the kit bar showing the crossbow, the net, tripwire chimes and the flare" loading="lazy"><figcaption>The Jailer's kit: a repeating crossbow, a net, tripwire chimes and a flare.</figcaption></figure>
+    <figure><img src="img/banished/play-reload.jpg" alt="First-person hunter view mid-reload, the magazine coming out and the ammo counter greyed at 27, while the Wendigo towers a few steps away with the Cage prompt over it" loading="lazy"><figcaption>Reloading with the Wendigo a few steps away: the magazine is out and the Cage is your one key.</figcaption></figure>
     <figure><img src="img/banished/play-cage.jpg" alt="The Cage up around the Wendigo: the HUD reads CONTAINED, CAGE 25s, INTEGRITY 100%, with three teammates closing in on the glowing Monster" loading="lazy"><figcaption>The Cage goes up: 25 seconds of CONTAINED while the team closes in.</figcaption></figure>
+    <figure><img src="img/banished/play-squad.jpg" alt="Third-person view of four hunters bunched together at the feet of a fully grown Wendigo in the foggy forest, a green healing ring on the ground around them" loading="lazy"><figcaption>Four hunters hold together under a fully grown Wendigo.</figcaption></figure>
     <figure><img src="img/banished/play-monster-sense.jpg" alt="The Monster's view with its HUD: the Wendigo weakened and caged, Sense lighting the hunters' trails in gold through the forest, a hunter closing in" loading="lazy"><figcaption>The other side: the Monster, caged and weakened, uses Sense to read the hunters' trails.</figcaption></figure>
   </div>
-  <p class="note">Stills captured in a real match on the test copy of BLACKPINE in the storm, on a 1366×768 laptop screen with the game's own HUD; the teammates are the game's bot hunters, which fill empty seats.</p>
+  <p class="note">Stills captured in a real match on the test copy of BLACKPINE in the storm, on a 1366×768 laptop screen with the game's own HUD (the squad shot is a free camera); the teammates are the game's bot hunters, which fill empty seats.<span class="print-only"> The 57-second teaser plays at the top of the web page: corporalv1.github.io/built-with-claude/what-we-keep-out.html</span></p>
 </div>
 
 <div class="wrap">
