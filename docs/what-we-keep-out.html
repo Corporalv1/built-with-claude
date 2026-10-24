@@ -50,7 +50,7 @@
   /* ---------- hero ---------- */
   .hero {
     position: relative;
-    min-height: 88vh;
+    min-height: 64vh;
     display: flex;
     align-items: flex-end;
     background: #000 url("img/banished/keyart.jpg") center 30% / cover no-repeat;
@@ -193,6 +193,13 @@
   .teaser figcaption { font-size: 0.82rem; color: var(--muted); padding: 10px 14px; }
   .note { font-size: 0.8rem; color: var(--faint); margin-top: 10px; }
 
+  /* the first screen after the title: the teaser, then the game as a player sees it */
+  .hero-media { padding-top: 28px; }
+  .hero-media .teaser { margin-top: 0; }
+  .hero-media .kicker { margin-top: 30px; }
+  .hero-media h2 { margin-bottom: 4px; }
+  .shots.gallery img { aspect-ratio: 16 / 9; object-fit: cover; }
+
   .lore { display: grid; grid-template-columns: 1.3fr 1fr; gap: 12px; margin-top: 12px; align-items: stretch; }
   .lore .photo { position: relative; min-height: 220px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
   .lore .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -299,6 +306,17 @@
     .teaser video { display: none; }
     .teaser .print-poster { display: block; width: 100%; aspect-ratio: 16 / 3; object-fit: cover; }
     .teaser figcaption { padding: 5px 10px; font-size: 11px; }
+    /* page 1 carries the title, the teaser, the gallery and the stats */
+    .hero { height: 122mm; }
+    .hero-media .print-poster { object-position: 50% 22%; }
+    .hero-media { padding-top: 5mm; }
+    .hero-media .kicker { margin-top: 5mm; }
+    .hero-media h2 { font-size: 20px; margin-bottom: 6px; }
+    .hero-media .note { margin-top: 4px; font-size: 9.5px; }
+    .shots.gallery { margin-top: 6px; }
+    .shots.gallery img { aspect-ratio: 16 / 9; }
+    .shots.gallery figcaption { font-size: 9.5px; padding: 4px 8px; line-height: 1.35; }
+    .stats { margin-top: 6mm !important; }
     .lore { grid-template-columns: 3fr 1fr; }
     .lore .photo { min-height: 0; }
     .built { columns: 3; column-gap: 10px; margin-top: 10px; }
@@ -337,12 +355,35 @@
     </div>
     <div class="cta">
       <a class="btn primary" href="WHAT-WE-KEEP-OUT-pitch.pdf">Download the pitch (PDF)</a>
+      <a class="btn ghost" href="#watch">Watch the teaser</a>
       <a class="btn ghost" href="#state">Where it stands today</a>
     </div>
   </div>
 </header>
 
 <main>
+
+<!-- ============ THE GAME, FIRST ============ -->
+<div class="wrap hero-media" id="watch">
+  <div class="teaser">
+    <figure>
+      <video controls preload="metadata" playsinline poster="img/banished/teaser-poster.jpg" aria-label="The first WHAT WE KEEP OUT teaser">
+        <source src="img/banished/teaser.mp4" type="video/mp4">
+      </video>
+      <img class="print-poster" src="img/banished/teaser-poster.jpg" alt="The Wendigo standing in the fog, caught in a hunter's flashlight: a frame from the first teaser">
+      <figcaption>The first teaser: 57 seconds, every frame the real game.</figcaption>
+    </figure>
+  </div>
+  <div class="kicker">As a player sees it</div>
+  <h2>Four hunters with a plan, one monster that grows</h2>
+  <div class="shots gallery">
+    <figure><img src="img/banished/play-flashlight.jpg" alt="First-person hunter view with the full HUD: a rifle raised, the flashlight on the Wendigo standing in the foggy forest, the Cage prompt over it" loading="lazy"><figcaption>Hunter, first person: the flashlight finds the Wendigo in the fog, and the Cage is one key away.</figcaption></figure>
+    <figure><img src="img/banished/play-crossbow.jpg" alt="The Jailer's first-person view: a repeating crossbow raised at the Wendigo in the rain, the kit bar showing the crossbow, the net, tripwire chimes and the flare" loading="lazy"><figcaption>The Jailer's kit: a repeating crossbow, a net, tripwire chimes and a flare.</figcaption></figure>
+    <figure><img src="img/banished/play-cage.jpg" alt="The Cage up around the Wendigo: the HUD reads CONTAINED, CAGE 25s, INTEGRITY 100%, with three teammates closing in on the glowing Monster" loading="lazy"><figcaption>The Cage goes up: 25 seconds of CONTAINED while the team closes in.</figcaption></figure>
+    <figure><img src="img/banished/play-monster-sense.jpg" alt="The Monster's view with its HUD: the Wendigo weakened and caged, Sense lighting the hunters' trails in gold through the forest, a hunter closing in" loading="lazy"><figcaption>The other side: the Monster, caged and weakened, uses Sense to read the hunters' trails.</figcaption></figure>
+  </div>
+  <p class="note">Stills captured in a real match on the test copy of BLACKPINE in the storm, on a 1366×768 laptop screen with the game's own HUD; the teammates are the game's bot hunters, which fill empty seats.</p>
+</div>
 
 <div class="wrap">
   <div class="stats">
@@ -570,15 +611,6 @@
   <div class="shots update">
     <figure class="pie"><img src="img/banished/new-emote-pie.jpg" alt="The emote wheel as a ring of slices, one slice lit gold with its name in the middle" loading="lazy"><figcaption>The emote wheel: pick a slice, it lights gold.</figcaption></figure>
     <figure><div class="banner-stack"><img src="img/banished/new-banner-downpour.jpg" alt="DOWNPOUR, a premium banner: the Monster standing in the rain between the trees" loading="lazy"><img src="img/banished/new-banner-the-long-man.jpg" alt="THE LONG MAN, a premium banner: the Long Man in the rain between the pines" loading="lazy"><img src="img/banished/new-banner-the-relic.jpg" alt="THE RELIC, a premium banner: the Relic stone's runes and sparks in the rain" loading="lazy"></div><figcaption>Premium banners: DOWNPOUR, THE LONG MAN and THE RELIC.</figcaption></figure>
-  </div>
-  <div class="teaser">
-    <figure>
-      <video controls preload="none" playsinline poster="img/banished/teaser-poster.jpg" aria-label="The first WHAT WE KEEP OUT teaser">
-        <source src="img/banished/teaser.mp4" type="video/mp4">
-      </video>
-      <img class="print-poster" src="img/banished/teaser-poster.jpg" alt="The Wendigo standing in the fog, caught in a hunter's flashlight: a frame from the first teaser">
-      <figcaption>The first teaser: 57 seconds, every frame the real game.</figcaption>
-    </figure>
   </div>
 </section>
 
