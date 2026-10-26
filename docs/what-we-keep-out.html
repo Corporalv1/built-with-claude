@@ -183,6 +183,9 @@
   .shots figure.wide { grid-column: 1 / -1; }
   .shots img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; }
   .shots figcaption { font-size: 0.82rem; color: var(--muted); padding: 10px 14px; }
+  .shots .banner-stack { display: grid; gap: 3px; }
+  .shots.update .pie img { aspect-ratio: 4 / 3; }
+  .shots .banner-stack img { aspect-ratio: 4 / 1; object-fit: cover; display: block; }
   .teaser { margin-top: 18px; }
   .teaser figure { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; margin: 0; }
   .teaser video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
@@ -287,6 +290,10 @@
     .shots figure.wide { grid-column: 1 / -1; }
     .shots figure.wide img { aspect-ratio: 16 / 5.4; }
     .shots.update img { aspect-ratio: 4 / 3.4; }
+    .shots.update figure { grid-column: span 2; }
+    .shots.update .pie img { aspect-ratio: 16 / 6.8; }
+    .shots.update .banner-stack { width: 56%; margin: 0 auto; }
+    .shots.update .banner-stack img { aspect-ratio: 4 / 1; }
     .shots figcaption { padding: 5px 10px; font-size: 11px; }
     .teaser { margin-top: 8px; }
     .teaser video { display: none; }
@@ -561,10 +568,8 @@
     <div class="card"><div class="tag">TV, tablet, controller</div><h3>Every word reads where you sit</h3><p>On a TV the lobby's menus and cards read from the couch. Tablets get the touch controls, laid out for their bigger screen. On a controller, a Hunter holds View to open the week's challenges mid-match.</p></div>
   </div>
   <div class="shots update">
-    <figure><img src="img/banished/new-emote-pie.jpg" alt="The emote wheel as a ring of slices, one slice lit gold with its name in the middle" loading="lazy"><figcaption>The emote wheel: pick a slice, it lights gold.</figcaption></figure>
-    <figure><img src="img/banished/new-banner-downpour.jpg" style="object-fit:contain;background:#000" alt="DOWNPOUR, a premium banner: the Monster standing in the rain between the trees" loading="lazy"><figcaption>DOWNPOUR, a premium banner.</figcaption></figure>
-    <figure><img src="img/banished/new-banner-the-long-man.jpg" style="object-fit:contain;background:#000" alt="THE LONG MAN, a premium banner: the Long Man in the rain between the pines" loading="lazy"><figcaption>THE LONG MAN, a premium banner.</figcaption></figure>
-    <figure><img src="img/banished/new-banner-the-relic.jpg" style="object-fit:contain;background:#000" alt="THE RELIC, a premium banner: the Relic stone's runes and sparks in the rain" loading="lazy"><figcaption>THE RELIC, a premium banner.</figcaption></figure>
+    <figure class="pie"><img src="img/banished/new-emote-pie.jpg" alt="The emote wheel as a ring of slices, one slice lit gold with its name in the middle" loading="lazy"><figcaption>The emote wheel: pick a slice, it lights gold.</figcaption></figure>
+    <figure><div class="banner-stack"><img src="img/banished/new-banner-downpour.jpg" alt="DOWNPOUR, a premium banner: the Monster standing in the rain between the trees" loading="lazy"><img src="img/banished/new-banner-the-long-man.jpg" alt="THE LONG MAN, a premium banner: the Long Man in the rain between the pines" loading="lazy"><img src="img/banished/new-banner-the-relic.jpg" alt="THE RELIC, a premium banner: the Relic stone's runes and sparks in the rain" loading="lazy"></div><figcaption>Premium banners: DOWNPOUR, THE LONG MAN and THE RELIC.</figcaption></figure>
   </div>
   <div class="teaser">
     <figure>
@@ -599,7 +604,7 @@
         <li>The hunters won all four live matches, and nobody called it unfair. We tuned the monster's early game right after.</li>
         <li>No match has reached Stage 3 with real players yet; the next session tests it.</li>
         <li>The game is not public yet. Every blocker the October launch audits found is fixed; launch still needs a re-audit, a certified release, a second live session and a real-phone performance baseline.</li>
-        <li>Strangers on public servers, matchmaking across two live lobby servers, purchases, crash-rejoin, bot matches and private matches still need proof on published servers.</li>
+        <li>Strangers on public servers, matchmaking across two live lobby servers, every purchase end to end, crash-rejoin, bot matches and private matches still need proof on published servers.</li>
       </ul>
     </div>
   </div>
@@ -625,7 +630,7 @@
         <div class="price"><span>Premium player-card banners (3)</span><b>R$150 · 750 Scrip</b></div>
         <div class="price"><span>Emotes (27)</span><b>R$50 · 250 Scrip</b></div>
       </div>
-      <p style="margin-top:10px">Grind or pay: a premium skin is about 53 matches of play, or R$400. Eight Robux products and the VIP pass are live in the build, and the shop shows each player Roblox's own price for their region (the prices above are list prices); the first real purchase on a public server is part of launch prep.</p>
+      <p style="margin-top:10px">Grind or pay: a premium skin is about 53 matches of play, or R$400. Eight Robux products and the VIP pass are live in the build, and the shop shows each player Roblox's own price for their region (the prices above are list prices), and real Robux purchases are verified on the live game.</p>
     </div>
     <div class="card" id="money-plan">
       <div class="tag">Built now, and what comes next</div>
@@ -681,7 +686,7 @@
     <li class="done"><div class="when">August 2026</div><h4>A full game</h4><p>Cross-server matchmaking (5 August), account progression (levels, ranks, titles), the shop with Scrip earning switched on, and the second monster, the Long Man, pickable from 28 August. Several closed beta sessions, all positive.</p></li>
     <li class="done"><div class="when">September 2026</div><h4>Real players, real servers</h4><p>BASIN 9 joins the map rotation and the Robux shop is built (3 September). The first live five-player session on published servers (15 September). Separate phone and controller layouts for the HUD, menus and controls. A full internal audit on 27 September found no launch blockers. The final name, WHAT WE KEEP OUT (28 September), then bot hunters and private matches (29 September).</p></li>
     <li class="done"><div class="when">October 2026</div><h4>A store worth opening, and a queue that never sits empty</h4><p>The Store and My Locker rebuilt for computer, phone and console, premium gun skins with their own effects, and the VIP pass built and priced (7 October). Launch audits on 7 and 9 October, and every blocker they found fixed. A private test copy of the whole game, bots that read trails and answer calls, on 19 October The Unlit, the first-time role pick and bots that fill whichever side the players did not pick, and on 26 October player cards, a pie-slice emote wheel and a TV and tablet pass.</p></li>
-    <li class="now"><div class="when">Now</div><h4>Launch prep</h4><p>A re-audit, a second live session that reaches Stage 3, a certified release, a real-phone performance baseline, and live proof of purchases, crash-rejoin and matchmaking across two lobby servers.</p></li>
+    <li class="now"><div class="when">Now</div><h4>Launch prep</h4><p>A re-audit, a second live session that reaches Stage 3, a certified release, a real-phone performance baseline, and live proof of every purchase end to end, crash-rejoin and matchmaking across two lobby servers.</p></li>
     <li><div class="when">Target: Q4 2026</div><h4>Public launch</h4><p>The experience goes public. This is where launch support and user acquisition make the difference, because the first weeks decide whether the queue fills.</p></li>
     <li><div class="when">After launch</div><h4>Season one</h4><p>A seasonal cosmetic track, the third monster, and dynamic map events.</p></li>
   </ol>
