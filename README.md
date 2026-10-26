@@ -26,7 +26,7 @@ My working repos are private while the projects are in development, but here's w
 
 ## 👹 Spotlight: WHAT WE KEEP OUT
 
-[![WHAT WE KEEP OUT key art](docs/img/banished/keyart.jpg)](https://corporalv1.github.io/built-with-claude/what-we-keep-out.html)
+[![WHAT WE KEEP OUT: 4 hunters, 1 monster](docs/img/banished/share-lineart.jpg)](https://corporalv1.github.io/built-with-claude/what-we-keep-out.html)
 
 My biggest project. Four hunters, one monster that eats to grow, and by the end of the match the hunted becomes the hunter. Built under my studio, Red Chevron Studios, starting 3 July 2026. It was called BANISHED until 28 September 2026.
 

@@ -7,7 +7,7 @@
 <meta name="description" content="WHAT WE KEEP OUT is a 4v1 asymmetric monster hunt on Roblox. Four armed hunters track one player-controlled monster that feeds on the forest to evolve. Pitch, current state and roadmap.">
 <meta property="og:title" content="WHAT WE KEEP OUT — a 4v1 monster hunt on Roblox">
 <meta property="og:description" content="Four hunters. One monster that eats to grow. Built in 115 days, in closed playtest, and every system is running.">
-<meta property="og:image" content="https://corporalv1.github.io/built-with-claude/img/banished/keyart.jpg">
+<meta property="og:image" content="https://corporalv1.github.io/built-with-claude/img/banished/share-lineart.jpg">
 <link rel="canonical" href="https://corporalv1.github.io/built-with-claude/what-we-keep-out.html">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,17 +53,10 @@
     min-height: 64vh;
     display: flex;
     align-items: flex-end;
-    background: #000 url("img/banished/keyart.jpg") center 30% / cover no-repeat;
+    background: var(--bg);
     border-bottom: 1px solid var(--line);
   }
-  .hero::before {
-    content: "";
-    position: absolute; inset: 0;
-    background:
-      linear-gradient(90deg, rgba(11,12,15,0.78) 0%, rgba(11,12,15,0.45) 42%, rgba(11,12,15,0) 70%),
-      linear-gradient(180deg, rgba(11,12,15,0.25) 0%, rgba(11,12,15,0.05) 35%, rgba(11,12,15,0.80) 74%, var(--bg) 100%);
-  }
-  .hero-inner { position: relative; padding: 120px 24px 56px; width: 100%; max-width: 1040px; margin: 0 auto; }
+  .hero-inner { position: relative; padding: 40px 24px 56px; width: 100%; max-width: 1040px; margin: 0 auto; }
   .studio {
     display: inline-flex; align-items: center; gap: 10px;
     font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
@@ -74,7 +67,8 @@
     padding: 6px 14px 6px 8px;
   }
   .studio img { width: 22px; height: auto; }
-  .logo { width: min(460px, 82vw); margin: 22px 0 14px; filter: drop-shadow(0 4px 24px rgba(0,0,0,0.9)); }
+  /* The line-art lockup (wordmark, both Monsters, four hunters) is the hero itself, white ink on a clear background. */
+  .logo { display: block; width: min(760px, 100%); margin: 18px auto 6px; }
   h1.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .lede {
     font-family: var(--display);
@@ -244,17 +238,10 @@
 
   @media (max-width: 720px) {
     .wrap { padding: 0 16px; }
-    .hero {
-      min-height: 0;
-      background:
-        linear-gradient(180deg, rgba(11,12,15,0) 0, rgba(11,12,15,0) 30vw, var(--bg) 56.25vw),
-        url("img/banished/keyart.jpg") center top / 100% auto no-repeat,
-        var(--bg);
-    }
-    .hero::before { display: none; }
-    .hero-inner { padding: 48vw 16px 40px; }
+    .hero { min-height: 0; }
+    .hero-inner { padding: 24px 16px 40px; }
     .studio { font-size: 11px; letter-spacing: 0.1em; }
-    .logo { width: 88vw; margin: 14px 0 12px; }
+    .logo { width: 100%; margin: 14px 0 8px; }
     .flow { grid-template-columns: 1fr; }
     .shots { grid-template-columns: 1fr; }
     .shots img { aspect-ratio: 16 / 8; }
@@ -271,9 +258,11 @@
     html, body { background: var(--bg) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     body { font-size: 12.5px; line-height: 1.5; }
     .wrap { max-width: none; padding: 0 14mm; }
-    .hero { min-height: 0; height: 168mm; background-position: center 25%; }
-    .hero-inner { max-width: none; padding: 0 14mm 10mm; }
-    .logo { width: 92mm; margin: 12px 0 8px; }
+    .hero { min-height: 0; }
+    /* page 1's budget is fixed (the hero height below): the line art stands beside the words */
+    .hero-inner { max-width: none; padding: 0 14mm 8mm; display: grid; grid-template-columns: 1fr 80mm; column-gap: 8mm; align-items: end; }
+    .hero-inner > * { grid-column: 1; }
+    .logo { grid-column: 2; grid-row: 1 / span 4; align-self: center; width: 80mm; margin: 0; }
     .lede { font-size: 24px; max-width: 160mm; }
     .sub { font-size: 13.5px; max-width: 160mm; }
     .cta { display: none; }
@@ -349,7 +338,7 @@
   <div class="hero-inner">
     <span class="studio"><img src="img/banished/chevron.png" alt="">Red Chevron Studios · on Roblox</span>
     <h1 class="sr">WHAT WE KEEP OUT</h1>
-    <img class="logo" src="img/banished/wordmark-wwko.png" alt="WHAT WE KEEP OUT">
+    <img class="logo" src="img/banished/lineart-lockup.png" alt="WHAT WE KEEP OUT: the wordmark between the two Monsters, the Long Man and the Wendigo, above four hunters">
     <p class="lede">Four hunters. One monster that <em>eats to grow.</em> By the end of the match, the hunted becomes the hunter.</p>
     <p class="sub">WHAT WE KEEP OUT is a 4v1 asymmetric monster hunt. Four first-person hunters with real guns and a plan track a player-controlled monster through a living forest, while it feeds on wildlife and fallen hunters to evolve through three stages.</p>
     <div class="chips">
@@ -521,7 +510,7 @@
       <h3>A world with a story</h3>
       <p>The game opens on a campfire at night. The lobby is a ranger station at the edge of a closed forest, with its own cast (Kessler, Pell, Brisco and The Unlit, the shopkeeper whose file is all but empty) and <strong>Case Files</strong>: missing-person posters, trail-camera photos and field notes that tell the story of what is out there, one discovery at a time.</p>
     </div>
-    <div class="photo"><img src="img/banished/prop-trailcam.jpg" alt="An in-game trail-camera photo of a tall figure between the trees" loading="lazy"></div>
+    <div class="photo"><img src="img/banished/lore-campfire.jpg" alt="The game's opening: hunters at a campfire at night" loading="lazy"></div>
   </div>
 </section>
 
