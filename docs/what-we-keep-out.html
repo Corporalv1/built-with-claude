@@ -6,7 +6,7 @@
 <title>WHAT WE KEEP OUT — Red Chevron Studios</title>
 <meta name="description" content="WHAT WE KEEP OUT is a 4v1 asymmetric monster hunt on Roblox. Four armed hunters track one player-controlled monster that feeds on the forest to evolve. Pitch, current state and roadmap.">
 <meta property="og:title" content="WHAT WE KEEP OUT — a 4v1 monster hunt on Roblox">
-<meta property="og:description" content="Four hunters. One monster that eats to grow. Built in 108 days, in closed playtest, and every system is running.">
+<meta property="og:description" content="Four hunters. One monster that eats to grow. Built in 115 days, in closed playtest, and every system is running.">
 <meta property="og:image" content="https://corporalv1.github.io/built-with-claude/img/banished/keyart.jpg">
 <link rel="canonical" href="https://corporalv1.github.io/built-with-claude/what-we-keep-out.html">
 <meta name="twitter:card" content="summary_large_image">
@@ -339,14 +339,14 @@
 
 <div class="wrap">
   <div class="stats">
-    <div class="stat"><div class="num">108</div><div class="label">days from first line of code</div></div>
-    <div class="stat"><div class="num">9,572</div><div class="label">commits</div></div>
-    <div class="stat"><div class="num">387k</div><div class="label">lines of type-checked game code</div></div>
-    <div class="stat"><div class="num">301</div><div class="label">automated test suites on every change</div></div>
+    <div class="stat"><div class="num">115</div><div class="label">days from first line of code</div></div>
+    <div class="stat"><div class="num">11,022</div><div class="label">commits</div></div>
+    <div class="stat"><div class="num">403k</div><div class="label">lines of type-checked game code</div></div>
+    <div class="stat"><div class="num">323</div><div class="label">automated test suites on every change</div></div>
     <div class="stat"><div class="num">2 · 4 · 2</div><div class="label">monsters · hunter classes · maps</div></div>
     <div class="stat"><div class="num">5 / 5</div><div class="label">live testers wanted another match</div></div>
   </div>
-  <p class="asof">Counts measured from the project repository on 19 October 2026; the line count leaves out the bots' generated walking maps. First commit 3 July 2026.</p>
+  <p class="asof">Counts measured from the project repository on 26 October 2026 (source files and test suites from its generated baseline of 25 October); the line count leaves out the bots' generated walking maps. First commit 3 July 2026.</p>
 </div>
 
 <!-- ============ WHY ============ -->
@@ -428,8 +428,8 @@
       <thead><tr><th>Class</th><th>Role</th><th>Weapons</th><th>Unique gear</th><th>Class ability</th></tr></thead>
       <tbody>
         <tr><td>Executioner<small>Damage</small></td><td data-label="Role">The threat that forces the monster to back off</td><td data-label="Weapons">Relic Rifle · Chain Whip</td><td data-label="Unique gear">Brand: hits stack sigils, then detonate</td><td data-label="Class ability">Iron Resolve: a damage-soaking stance</td></tr>
-        <tr><td>Sanctum<small>Healer</small></td><td data-label="Role">All healing and sustain</td><td data-label="Weapons">Hexlock Pistol · Surgical Vial Launcher (lobbed area heals)</td><td data-label="Unique gear">Healing Aura: a smashable heal field</td><td data-label="Class ability">Mending Burst: an emergency group heal</td></tr>
-        <tr><td>Jailer<small>Control</small></td><td data-label="Role">Find the monster, then pin it</td><td data-label="Weapons">Repeating Crossbow (wounds leave a glowing trail) · Tripwire Chimes (alarm bells)</td><td data-label="Unique gear">The Net: a harpoon snare</td><td data-label="Class ability">Flare: lights a wide area and reveals the monster inside it</td></tr>
+        <tr><td>Sanctum<small>Healer</small></td><td data-label="Role">All healing and sustain</td><td data-label="Weapons">Hexlock Pistol · Surgical Vial Launcher (lobbed area heals)</td><td data-label="Unique gear">Medkit: a smashable heal field</td><td data-label="Class ability">Mending Burst: an emergency group heal</td></tr>
+        <tr><td>Jailer<small>Control</small></td><td data-label="Role">Find the monster, then pin it</td><td data-label="Weapons">Repeating Crossbow (wounds leave a glowing trail) · Tripwire Chimes (alarm bells)</td><td data-label="Unique gear">Net Launcher: a harpoon snare</td><td data-label="Class ability">Flare: lights a wide area and reveals the monster inside it</td></tr>
         <tr><td>Sage<small>Support</small></td><td data-label="Role">Force multiplier and protection</td><td data-label="Weapons">Consecrated Scattergun (pump shotgun) · Banishing Lantern</td><td data-label="Unique gear">Decoy: a double that runs while she vanishes</td><td data-label="Class ability">The Veil: hides hunters from the monster's Sense</td></tr>
       </tbody>
     </table>
@@ -512,14 +512,14 @@
         <li>XP from every match drives level, eight rank tiers and titles</li>
         <li>Scrip currency from every match; a loss pays nearly as much as a win</li>
         <li>Weekly challenges on their own menu, in the lobby and in the match</li>
-        <li>A cosmetic locker and shop, a VIP pass, and a saved last-match summary</li>
+        <li>A cosmetic locker and shop, a VIP pass, player cards and a saved last-match summary</li>
       </ul>
     </div>
     <div class="card">
       <h3>Engineering quality</h3>
       <ul>
-        <li>Every one of the 3,126 source files is strictly type-checked</li>
-        <li>301 automated test suites and a CI pipeline run on every change</li>
+        <li>Every one of the 3,213 source files is strictly type-checked</li>
+        <li>323 automated test suites and a CI pipeline run on every change</li>
         <li>Tuning numbers live in config, so balance changes never touch game logic</li>
         <li>Internal audits on 27 September, 7 October and 9 October; every launch blocker they found is fixed</li>
       </ul>
@@ -527,8 +527,8 @@
     <div class="card">
       <h3>Every platform, its own build</h3>
       <ul>
-        <li><strong>Phone:</strong> our own touch buttons with a separate layout for each role, an editable layout, touch aim assist, phone-specific HUD arrangements and menus laid out to read at phone size</li>
-        <li><strong>Controller:</strong> every menu works on a gamepad, with pad-specific bindings and text sized for the couch</li>
+        <li><strong>Phone and tablet:</strong> our own touch buttons with a separate layout for each role, an editable layout, touch aim assist, phone-specific HUD arrangements and menus laid out to read at phone size</li>
+        <li><strong>Controller and TV:</strong> every menu works on a gamepad, with pad-specific bindings and text sized for the couch</li>
         <li><strong>Computer:</strong> full keyboard and mouse, rebindable keys</li>
         <li>Settings: graphics presets, HUD size, reticle and audio accessibility</li>
       </ul>
@@ -549,22 +549,22 @@
 
 <!-- ============ LATEST UPDATE ============ -->
 <section class="wrap page-break" id="new">
-  <div class="kicker">Latest update · 19 October 2026</div>
-  <h2>No empty queues, no forced roles, and a stranger at the bus</h2>
-  <p class="muted narrow">The newest update landed on 19 October. Most of it is about a new player's first minutes, and about never leaving anyone alone in an empty queue.</p>
+  <div class="kicker">Latest update · 26 October 2026</div>
+  <h2>Your own calling card, and a wheel for every hand</h2>
+  <p class="muted narrow">The newest update landed on 26 October: a card that says who you are, and every build reading the way its players hold it.</p>
   <div class="grid3" style="margin-top:18px">
-    <div class="card"><div class="tag">First time</div><h3>Pick your side</h3><p>A first-time player chooses HUNTER or MONSTER on one card before their first search, and can change it any time in Settings. A Hunter pick spreads new players across all four classes instead of everyone asking for the same one.</p></div>
-    <div class="card accent"><div class="tag">Bots</div><h3>Bots fill the side you didn't pick</h3><p>When the queue is thin, bots take the seats the players left open. A Monster fan gets bot hunters; a solo hunter, or a party of up to four, gets a bot Monster that feeds, evolves and goes for the Relic. A solo search fills after 75 seconds.</p></div>
-    <div class="card"><div class="tag">The camp</div><h3>The Unlit</h3><p>A new shopkeeper at the camp's bus: hooded, faceless in the dark, and never seen to step off it. His own Field Notes file is all but empty: <em>"Pell keeps a file on everyone in camp. His drawer is empty."</em></p></div>
-    <div class="card"><div class="tag">Parties</div><h3>Nobody drops out of the queue</h3><p>If someone leaves a party mid-search, the rest keep searching at their new size and are told who left, by name.</p></div>
-    <div class="card"><div class="tag">Phone</div><h3>Menus that read on a phone</h3><p>The Store, My Locker and Field Notes are laid out for a phone's screen, with rows sized for a thumb.</p></div>
-    <div class="card"><div class="tag">Sound and set</div><h3>A camp that is all ours</h3><p>Two new songs join the camp's music, fourteen original tracks in all. The bunkhouse wears our own wanted posters for the Wendigo and the Long Man, its house rules and the crew roster, and a standing Cage now hums.</p></div>
+    <div class="card accent"><div class="tag">Player cards</div><h3>A calling card</h3><p>Every player has a card: a picture banner, their rank emblem, their name, a title and their rank, with their stats under it. Pick the banner and title in My Locker. Twelve banners are earned with rank and play, and titles are only ever earned.</p></div>
+    <div class="card"><div class="tag">Store</div><h3>Premium banners</h3><p>Three premium banners are in the Store at 750 Scrip or R$150, and three moving ones are coming soon. A banner is a look, never power.</p></div>
+    <div class="card"><div class="tag">Players</div><h3>Look anyone up</h3><p>In the lobby, open any player from the Tab list for their full stats and an INVITE TO PARTY button. Anyone can set their stats private, and then others see only their name, rank and card.</p></div>
+    <div class="card"><div class="tag">Emotes</div><h3>A pie-slice wheel</h3><p>The emote wheel is a ring of slices on every build: the one you point at lights gold and pushes out, its name big in the middle. An emote loops until you press anything else.</p></div>
+    <div class="card"><div class="tag">The camp</div><h3>Your loadout, on you</h3><p>What you equip in the Store shows on your body at the camp at once, with a SHOW IN LOBBY pin to wear one look in the lobby without changing what you take into a match.</p></div>
+    <div class="card"><div class="tag">TV, tablet, controller</div><h3>Every word reads where you sit</h3><p>On a TV the lobby's menus and cards read from the couch. Tablets get the touch controls, laid out for their bigger screen. On a controller, a Hunter holds View to open the week's challenges mid-match.</p></div>
   </div>
   <div class="shots update">
-    <figure><img src="img/banished/new-role-pick.jpg" alt="The first-time card asking who you prefer to play as, Hunter or Monster, over the campfire" loading="lazy"><figcaption>The first-time card: one choice, changeable any time.</figcaption></figure>
-    <figure><img src="img/banished/new-unlit-bus.jpg" alt="The Unlit, a hooded shopkeeper with no visible face, leaning in the bus window" loading="lazy"><figcaption>The Unlit, at the bus window.</figcaption></figure>
-    <figure><img src="img/banished/new-unlit-file.jpg" style="object-position:100% 50%" alt="The Unlit's Field Notes file: no file, his portrait kept in darkness" loading="lazy"><figcaption>His Field Notes file, kept in the dark.</figcaption></figure>
-    <figure><img src="img/banished/new-campfire-title.jpg" style="object-position:0% 50%" alt="The title screen: the camp's crew around a campfire at night under the WHAT WE KEEP OUT title" loading="lazy"><figcaption>The title screen: the campfire, at night.</figcaption></figure>
+    <figure><img src="img/banished/new-emote-pie.jpg" alt="The emote wheel as a ring of slices, one slice lit gold with its name in the middle" loading="lazy"><figcaption>The emote wheel: pick a slice, it lights gold.</figcaption></figure>
+    <figure><img src="img/banished/new-banner-downpour.jpg" style="object-fit:contain;background:#000" alt="DOWNPOUR, a premium banner: the Monster standing in the rain between the trees" loading="lazy"><figcaption>DOWNPOUR, a premium banner.</figcaption></figure>
+    <figure><img src="img/banished/new-banner-the-long-man.jpg" style="object-fit:contain;background:#000" alt="THE LONG MAN, a premium banner: the Long Man in the rain between the pines" loading="lazy"><figcaption>THE LONG MAN, a premium banner.</figcaption></figure>
+    <figure><img src="img/banished/new-banner-the-relic.jpg" style="object-fit:contain;background:#000" alt="THE RELIC, a premium banner: the Relic stone's runes and sparks in the rain" loading="lazy"><figcaption>THE RELIC, a premium banner.</figcaption></figure>
   </div>
   <div class="teaser">
     <figure>
@@ -614,7 +614,7 @@
     <div class="card" id="money-live">
       <div class="tag">Live in the build today</div>
       <h3>A two-currency cosmetic shop</h3>
-      <p>Every cosmetic can be earned with Scrip, which every match pays (a loss pays nearly as much as a win), or bought with Robux. 116 priced items today:</p>
+      <p>Every cosmetic can be earned with Scrip, which every match pays (a loss pays nearly as much as a win), or bought with Robux. 119 priced items today:</p>
       <div style="margin-top:10px">
         <div class="price"><span>Premium monster bodies (7)</span><b>R$400 · 4,000 Scrip</b></div>
         <div class="price"><span>Premium weapon skins, with their own effects (16)</span><b>R$400 · 4,000 Scrip</b></div>
@@ -622,15 +622,16 @@
         <div class="price"><span>Hunter outfits (12)</span><b>R$200 · 1,000 Scrip</b></div>
         <div class="price"><span>Kit item skins (6)</span><b>R$200 · 1,000 Scrip</b></div>
         <div class="price"><span>Weapon finishes (36)</span><b>R$99 · 500 Scrip</b></div>
+        <div class="price"><span>Premium player-card banners (3)</span><b>R$150 · 750 Scrip</b></div>
         <div class="price"><span>Emotes (27)</span><b>R$50 · 250 Scrip</b></div>
       </div>
-      <p style="margin-top:10px">Grind or pay: a premium skin is about 53 matches of play, or R$400. Seven Robux products and the VIP pass are live in the build, and the shop shows each player Roblox's own price for their region (the prices above are list prices); the first real purchase on a public server is part of launch prep.</p>
+      <p style="margin-top:10px">Grind or pay: a premium skin is about 53 matches of play, or R$400. Eight Robux products and the VIP pass are live in the build, and the shop shows each player Roblox's own price for their region (the prices above are list prices); the first real purchase on a public server is part of launch prep.</p>
     </div>
     <div class="card" id="money-plan">
       <div class="tag">Built now, and what comes next</div>
       <h3>Pass, seasons and roster</h3>
       <ul>
-        <li><strong>VIP pass (built and priced since 7 October, R$599):</strong> +15% match XP (never currency), 8 emote slots instead of 4, a skull mark by your name and a burning name when you play the monster, a voucher for one skin of your choice, and hosting private matches with custom rules.</li>
+        <li><strong>VIP pass (built and priced since 7 October, R$599):</strong> +15% match XP (never currency), 8 emote slots instead of 4, a skull mark by your name, a flare over it as a hunter and a burning name when you play the monster, a voucher for one skin of your choice, and hosting private matches with custom rules.</li>
         <li><strong>A seasonal cosmetic track</strong> with themed skins each season.</li>
         <li><strong>New monsters and hunters</strong> unlockable with either currency.</li>
         <li><strong>Monster skins stay the lead product.</strong> In this genre, monster players are the biggest spenders, and every skin is seen by the four hunters it is chasing.</li>
@@ -674,12 +675,12 @@
 <!-- ============ TIMELINE ============ -->
 <section class="wrap" id="timeline">
   <div class="kicker">Timeline</div>
-  <h2>108 days in, and the road to launch</h2>
+  <h2>115 days in, and the road to launch</h2>
   <ol class="timeline">
     <li class="done"><div class="when">July 2026</div><h4>From four grey blocks to a game</h4><p>First code on 3 July; the feed-and-evolve loop the next day. Then the design thesis, the four hunter kits, saved player profiles, the BLACKPINE map rebuild, the first phone controls and the separate lobby place.</p></li>
     <li class="done"><div class="when">August 2026</div><h4>A full game</h4><p>Cross-server matchmaking (5 August), account progression (levels, ranks, titles), the shop with Scrip earning switched on, and the second monster, the Long Man, pickable from 28 August. Several closed beta sessions, all positive.</p></li>
     <li class="done"><div class="when">September 2026</div><h4>Real players, real servers</h4><p>BASIN 9 joins the map rotation and the Robux shop is built (3 September). The first live five-player session on published servers (15 September). Separate phone and controller layouts for the HUD, menus and controls. A full internal audit on 27 September found no launch blockers. The final name, WHAT WE KEEP OUT (28 September), then bot hunters and private matches (29 September).</p></li>
-    <li class="done"><div class="when">October 2026</div><h4>A store worth opening, and a queue that never sits empty</h4><p>The Store and My Locker rebuilt for computer, phone and console, premium gun skins with their own effects, and the VIP pass built and priced (7 October). Launch audits on 7 and 9 October, and every blocker they found fixed. A private test copy of the whole game, bots that read trails and answer calls, and on 19 October The Unlit, the first-time role pick and bots that fill whichever side the players did not pick.</p></li>
+    <li class="done"><div class="when">October 2026</div><h4>A store worth opening, and a queue that never sits empty</h4><p>The Store and My Locker rebuilt for computer, phone and console, premium gun skins with their own effects, and the VIP pass built and priced (7 October). Launch audits on 7 and 9 October, and every blocker they found fixed. A private test copy of the whole game, bots that read trails and answer calls, on 19 October The Unlit, the first-time role pick and bots that fill whichever side the players did not pick, and on 26 October player cards, a pie-slice emote wheel and a TV and tablet pass.</p></li>
     <li class="now"><div class="when">Now</div><h4>Launch prep</h4><p>A re-audit, a second live session that reaches Stage 3, a certified release, a real-phone performance baseline, and live proof of purchases, crash-rejoin and matchmaking across two lobby servers.</p></li>
     <li><div class="when">Target: Q4 2026</div><h4>Public launch</h4><p>The experience goes public. This is where launch support and user acquisition make the difference, because the first weeks decide whether the queue fills.</p></li>
     <li><div class="when">After launch</div><h4>Season one</h4><p>A seasonal cosmetic track, the third monster, and dynamic map events.</p></li>
@@ -699,7 +700,7 @@
     <div class="card">
       <div class="tag">Engineering</div>
       <h3>AI coding agents, run like a team</h3>
-      <p>The code is written by AI coding agents (Anthropic's Claude Code, with OpenAI's Codex on some tasks) working under a written engineering rulebook: the server owns gameplay truth, every tuning number lives in config, and no change lands until the automated gate passes. That is how one director produced 9,572 commits in 108 days without the codebase rotting.</p>
+      <p>The code is written by AI coding agents (Anthropic's Claude Code, with OpenAI's Codex on some tasks) working under a written engineering rulebook: the server owns gameplay truth, every tuning number lives in config, and no change lands until the automated gate passes. That is how one director produced 11,022 commits in 115 days without the codebase rotting.</p>
     </div>
     <div class="card">
       <div class="tag">Art and audio</div>
@@ -750,7 +751,7 @@
       <div><b>Studio</b><a href="https://www.roblox.com/communities/279265964">Red Chevron Studios</a> on Roblox</div>
       <div><b>GitHub</b><a href="https://github.com/Corporalv1">@Corporalv1</a></div>
     </div>
-    <p class="fine">WHAT WE KEEP OUT is the final name (until 28 September 2026 the game's working title was BANISHED). Screenshots are in-engine captures from development builds. The game, its characters, lore and art are original works of Red Chevron Studios. Figures on this page were read from the project on 19 October 2026. <a href="./">More from this builder</a>.</p>
+    <p class="fine">WHAT WE KEEP OUT is the final name (until 28 September 2026 the game's working title was BANISHED). Screenshots are in-engine captures from development builds. The game, its characters, lore and art are original works of Red Chevron Studios. Figures on this page were read from the project on 26 October 2026. <a href="./">More from this builder</a>.</p>
   </div>
 </footer>
 

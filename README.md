@@ -32,9 +32,10 @@ My biggest project. Four hunters, one monster that eats to grow, and by the end 
 
 - **Two monsters, four hunter classes, two maps**, all playable end to end: lobby, matchmaking, match, scoreboard, saved progress
 - **Bots fill a thin queue** on whichever side players did not pick, private matches with custom rules, a cosmetic shop and a VIP pass
-- **Computer, phone and controller**, each with its own controls and layout
+- **Computer, phone, tablet and controller**, each with its own controls and layout, and a TV build that reads from the couch
+- **Player cards**: a calling card with earned and premium banners, titles and your stats, plus a pie-slice emote wheel
 - **First live five-player session** on published Roblox servers on 15 September 2026. All five players wanted to go again
-- **9,572 commits in 108 days**, with 301 automated test suites running on every change
+- **11,022 commits in 115 days**, with 323 automated test suites running on every change
 
 **👉 [The full pitch: the game, what's built, where it stands, monetization, live-ops and roadmap](https://corporalv1.github.io/built-with-claude/what-we-keep-out.html)** ([PDF](https://corporalv1.github.io/built-with-claude/WHAT-WE-KEEP-OUT-pitch.pdf))
 
