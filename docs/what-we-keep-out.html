@@ -6,7 +6,7 @@
 <title>WHAT WE KEEP OUT — Red Chevron Studios</title>
 <meta name="description" content="WHAT WE KEEP OUT is a 4v1 asymmetric monster hunt on Roblox. Four armed hunters track one player-controlled monster that feeds on the forest to evolve. Pitch, current state and roadmap.">
 <meta property="og:title" content="WHAT WE KEEP OUT — a 4v1 monster hunt on Roblox">
-<meta property="og:description" content="Four hunters. One monster that eats to grow. Built in 120 days, in closed playtest, and every system is running.">
+<meta property="og:description" content="Four hunters. One monster that eats to grow. Built in 140 days, public on Roblox from 25 November, and every system is running.">
 <meta property="og:image" content="https://corporalv1.github.io/built-with-claude/img/banished/share-lineart.jpg">
 <link rel="canonical" href="https://corporalv1.github.io/built-with-claude/what-we-keep-out.html">
 <meta name="twitter:card" content="summary_large_image">
@@ -296,6 +296,10 @@
     .teaser video { display: none; }
     .teaser .print-poster { display: block; width: 100%; aspect-ratio: 16 / 3; object-fit: cover; }
     .teaser figcaption { padding: 5px 10px; font-size: 11px; }
+    .keyart-launch { margin: 0 0 6px !important; }
+    .keyart-launch img { aspect-ratio: 16 / 3; object-fit: cover; object-position: 50% 40%; }
+    .keyart-launch figcaption { font-size: 11px; padding: 3px 0; }
+    #new .teaser, #new .shots.update { display: none; } /* paper keeps the title art; the trailer and the older update's pictures are on the web page */
     /* page 1 carries the title, the teaser, the gallery and the stats */
     .hero { height: 116mm; }
     .shots.gallery { grid-template-columns: repeat(3, 1fr); gap: 6px; }
@@ -338,11 +342,11 @@
   <div class="hero-inner">
     <span class="studio"><img src="img/banished/chevron.png" alt="">Red Chevron Studios · on Roblox</span>
     <h1 class="sr">WHAT WE KEEP OUT</h1>
-    <img class="logo" src="img/banished/lineart-lockup.png" alt="WHAT WE KEEP OUT: the wordmark between the two Monsters, the Long Man and the Wendigo, above four hunters">
+    <img class="logo" src="img/banished/lineart-lockup.png" alt="WHAT WE KEEP OUT: the wordmark between two of its Monsters, Long Man and the Wendigo, above four hunters">
     <p class="lede">Four hunters. One monster that <em>eats to grow.</em> By the end of the match, the hunted becomes the hunter.</p>
     <p class="sub">WHAT WE KEEP OUT is a 4v1 asymmetric monster hunt. Four first-person hunters with real guns and a plan track a player-controlled monster through a living forest, while it feeds on wildlife and fallen hunters to evolve through three stages.</p>
     <div class="chips">
-      <span class="chip status">● In closed playtest</span>
+      <span class="chip status">● Public on Roblox 25 November</span>
       <span class="chip">5 players per match</span>
       <span class="chip">12-minute hunt</span>
       <span class="chip">Computer · Phone · Tablet · Console</span>
@@ -385,14 +389,14 @@
 
 <div class="wrap">
   <div class="stats">
-    <div class="stat"><div class="num">121</div><div class="label">days from first line of code</div></div>
-    <div class="stat"><div class="num">12,603</div><div class="label">commits</div></div>
-    <div class="stat"><div class="num">417k</div><div class="label">lines of type-checked game code</div></div>
-    <div class="stat"><div class="num">377</div><div class="label">automated test suites on every change</div></div>
-    <div class="stat"><div class="num">2 · 4 · 2</div><div class="label">monsters · hunter classes · maps</div></div>
+    <div class="stat"><div class="num">140</div><div class="label">days from first line of code</div></div>
+    <div class="stat"><div class="num">19,010</div><div class="label">commits</div></div>
+    <div class="stat"><div class="num">486k</div><div class="label">lines of type-checked game code</div></div>
+    <div class="stat"><div class="num">424</div><div class="label">automated test suites on every change</div></div>
+    <div class="stat"><div class="num">3 · 4 · 2</div><div class="label">monsters · hunter classes · maps</div></div>
     <div class="stat"><div class="num">5 / 5</div><div class="label">live testers wanted another match</div></div>
   </div>
-  <p class="asof">Counts measured from the project repository on 1 November 2026; the line count leaves out the bots' generated walking maps. First commit 3 July 2026.</p>
+  <p class="asof">Counts measured from the project repository on 20 November 2026; the line count leaves out the bots' generated walking maps. First commit 3 July 2026.</p>
 </div>
 
 <!-- ============ WHY ============ -->
@@ -456,17 +460,22 @@
 <!-- ============ ROSTER ============ -->
 <section class="wrap page-break">
   <div class="kicker">The roster</div>
-  <h2>Two monsters, four hunter classes</h2>
-  <div class="grid2">
+  <h2>Three monsters, four hunter classes</h2>
+  <div class="grid3">
     <div class="card accent">
       <div class="tag">Monster 1</div>
-      <h3>The Wendigo</h3>
+      <h3>Wendigo</h3>
       <p>A gaunt spirit of famine that grows with every meal: Starved, then Ravenous, then Gorged. <strong>Ground Slam</strong> scatters a clumped team, <strong>Scream</strong> interrupts heals and floods the map with false tracking noise, <strong>Snatch</strong> drags one hunter into the dark, and <strong>Rush</strong> tramples everything in a line. <strong>Sense</strong> reveals prey through walls.</p>
     </div>
     <div class="card accent">
       <div class="tag">Monster 2</div>
-      <h3>The Long Man</h3>
+      <h3>Long Man</h3>
       <p>A second monster built on positioning and psychic pressure, pickable today. He <strong>Blinks</strong> instead of running, his Sense freezes a psychic image of the hunters, <strong>Echoes</strong> release copies of him to confuse pursuit, <strong>Long Reach</strong> drags a caught hunter while he keeps moving, and <strong>Head Pain</strong> leaves the team dazed.</p>
+    </div>
+    <div class="card accent">
+      <div class="tag">Monster 3 · new at launch</div>
+      <h3>Bigfoot</h3>
+      <p>The one who keeps his distance. He tears a <strong>Rock</strong> out of the ground and hurls it, rips up a young tree as a <strong>Log</strong> to swing or throw, and bangs two pieces of wood together in a <strong>Wood Knock</strong> that leaves nearby hunters with ringing ears, blurred vision and slow feet. His <strong>Tree Wall</strong> blocks hunters and their shots and hurts anyone beside it as it rises. Up close his fists hit softer than the Wendigo's claws, so he makes the forest do the work, and his run charges straight through a fight.</p>
     </div>
   </div>
   <div class="table-wrap">
@@ -480,7 +489,7 @@
       </tbody>
     </table>
   </div>
-  <p class="note">Every class is two weapons, one unique piece of gear and one class ability. Every class, and both monsters, live in configuration rather than custom code, which is what makes a new character a content drop instead of a rewrite.</p>
+  <p class="note">Every class is two weapons, one unique piece of gear and one class ability. Every class, and all three monsters, live in configuration rather than custom code, which is what makes a new character a content drop instead of a rewrite.</p>
 </section>
 
 <!-- ============ WORLD ============ -->
@@ -525,8 +534,8 @@
       <h3>Combat and characters</h3>
       <ul>
         <li>Four complete hunter kits: 16 slots, five guns with first-person arms, aim-down-sights and aimed reloads</li>
-        <li>Inspect animations for held guns and gear, plus rare 1% reload gags</li>
-        <li>Two monsters with full ability sets, traversal (leap, wall-crawl, crouch) and a three-stage evolution with upgrade choices</li>
+        <li>Inspect animations for held guns and gear, plus rare reload gags, about one in 2,000 reloads</li>
+        <li>Three monsters with full ability sets, traversal (leap, wall-crawl, crouch) and a three-stage evolution with upgrade choices</li>
         <li>Revives, a downed state, pings, sprint, a traversal rig with dodge bursts, and the team Cage</li>
         <li>Server-authoritative damage: a client never decides whether it hit</li>
       </ul>
@@ -564,10 +573,10 @@
     <div class="card">
       <h3>Engineering quality</h3>
       <ul>
-        <li>Every one of the 3,439 source files is strictly type-checked</li>
-        <li>376 automated test suites run before every change lands</li>
+        <li>Every one of the 4,107 source files is strictly type-checked</li>
+        <li>424 automated test suites run before every change lands</li>
         <li>Tuning numbers live in config, so balance changes never touch game logic</li>
-        <li>Internal audits on 27 September, 7 October and 9 October; every launch blocker they found is fixed</li>
+        <li>Internal audits from 27 September to 11 November; every launch blocker they found is fixed</li>
       </ul>
     </div>
     <div class="card">
@@ -576,7 +585,7 @@
         <li><strong>Phone and tablet:</strong> our own touch buttons with a separate layout for each role, an editable layout, touch aim assist, phone-specific HUD arrangements and menus laid out to read at phone size</li>
         <li><strong>Controller and TV:</strong> every menu works on a gamepad, with pad-specific bindings and text sized for the couch</li>
         <li><strong>Computer:</strong> full keyboard and mouse, rebindable keys</li>
-        <li><strong>Languages:</strong> available in 17 languages, with the game's own words corrected in Spanish, Portuguese, German and French</li>
+        <li><strong>Languages:</strong> available in 17 languages, with the game's own words corrected in every one</li>
         <li>Settings: graphics presets, HUD size, reticle and audio accessibility</li>
       </ul>
     </div>
@@ -596,9 +605,10 @@
 
 <!-- ============ LATEST UPDATE ============ -->
 <section class="wrap page-break" id="new">
-  <div class="kicker">Latest update · 1 November 2026</div>
-  <h2>A post that tells you what changed, and a private match that keeps going</h2>
-  <p class="muted narrow">Live since 1 November: dated news in the lobby, better endings for private matches, and the game's own words corrected in all 17 languages.</p>
+  <div class="kicker">The launch update · 25 November 2026</div>
+  <h2>Bigfoot joins the hunt, and the whole game goes out in one big update</h2>
+  <p class="muted narrow">Going live with the launch: a third Monster, a new title screen, ranks that earn looks, and a fairer deal when a match goes wrong.</p>
+  <figure class="keyart-launch" style="margin:0 0 18px"><img src="img/banished/keyart-v3-launch.jpg" alt="The new title art: Bigfoot, the Wendigo and Long Man in the dark forest above the four hunters" loading="lazy" style="width:100%;border-radius:10px;display:block"><figcaption>The new title art, with all three Monsters. It is the loading screen in the game.</figcaption></figure>
   <div class="teaser" id="trailer2">
     <figure>
       <video controls preload="metadata" playsinline poster="img/banished/trailer2-poster.jpg" aria-label="The second WHAT WE KEEP OUT trailer">
@@ -609,14 +619,14 @@
     </figure>
   </div>
   <div class="grid3" style="margin-top:18px">
-    <div class="card accent"><div class="tag">The lobby</div><h3>The Dispatch Post</h3><p>A lit post on the training bunkhouse carries the news: each entry dated, newest on top, on a card as big as Settings. One live line can go up without an update.</p></div>
-    <div class="card"><div class="tag">Private matches</div><h3>Run it back</h3><p>A private match now ends with a choice: Run It Back, Next Monster or Back to Lobby.</p></div>
-    <div class="card"><div class="tag">Last Match</div><h3>Your last ten</h3><p>Last Match now lists your last 10 matches, each with the full end board and the trail map.</p></div>
-    <div class="card"><div class="tag">The head start</div><h3>A radio you can read</h3><p>The head-start radio is bigger, and each voice has its own color.</p></div>
-    <div class="card"><div class="tag">Settings and phones</div><h3>More of it yours</h3><p>Settings adds controller look and aim speed, invert look and reset keys. Phones get a new layout editor and a smaller team list, with the flashlight under the Map.</p></div>
-    <div class="card"><div class="tag">Languages</div><h3>The game's own words</h3><p>The game is available in 17 languages. Its names for the Cage, the classes and the abilities are corrected in every one, and a label that runs long shrinks to fit.</p></div>
+    <div class="card accent"><div class="tag">The new Monster</div><h3>Bigfoot</h3><p>Rocks, logs, a wood knock that rings your ears and a wall of trees that comes up out of the ground. He has his own How to Play page and his own Field Notes.</p></div>
+    <div class="card"><div class="tag">The title screen</div><h3>All three of them</h3><p>The loading screen and the game's picture show Bigfoot beside the Wendigo and Long Man. The title starts as an outline and fills in while you load.</p></div>
+    <div class="card"><div class="tag">Ranks</div><h3>Ranking up earns looks</h3><p>Four flashlight finishes and four lens glows, and a trail of your own for the R.I.G., from DRIFTER up to ELDER. The rank card tells you what you unlocked.</p></div>
+    <div class="card"><div class="tag">Fair play</div><h3>Pay for the time you played</h3><p>Every public match pays for the minutes you were in it, in full from eight minutes on. Your first leave in a day is free with a warning, and a phone that crashes or loses signal is forgiven once a day.</p></div>
+    <div class="card"><div class="tag">The training range</div><h3>Room to practise</h3><p>Every Hunter gets a course room of their own, and the range has a TAKE DAMAGE switch: two Hunters who both turn it on can fight each other.</p></div>
+    <div class="card"><div class="tag">Comfort</div><h3>Easier on the eyes</h3><p>A first-time note about flashing lights, and FLASH INTENSITY now turns down the lamps, the Cage, the flare and the evolve glow too. Your first-person arms take your own skin tone.</p></div>
   </div>
-  <p class="muted narrow" style="margin-top:18px">The 26 October update added player cards, premium banners, player lookups from the Tab list and a pie-slice emote wheel on every build.</p>
+  <p class="muted narrow" style="margin-top:18px">Before this: the 1 November update put a dated news post in the lobby, gave private matches Run It Back and Next Monster, listed your last ten matches and corrected the game's own words in all 17 languages. The 26 October update added player cards, premium banners, player lookups from the Tab list and a pie-slice emote wheel on every build.</p>
   <div class="shots update">
     <figure class="pie"><img src="img/banished/new-emote-pie.jpg" alt="The emote wheel as a ring of slices, one slice lit gold with its name in the middle" loading="lazy"><figcaption>The emote wheel: pick a slice, it lights gold.</figcaption></figure>
     <figure><div class="banner-stack"><img src="img/banished/new-banner-downpour.jpg" alt="DOWNPOUR, a premium banner: the Monster standing in the rain between the trees" loading="lazy"><img src="img/banished/new-banner-the-long-man.jpg" alt="THE LONG MAN, a premium banner: the Long Man in the rain between the pines" loading="lazy"><img src="img/banished/new-banner-the-relic.jpg" alt="THE RELIC, a premium banner: the Relic stone's runes and sparks in the rain" loading="lazy"></div><figcaption>Premium banners: DOWNPOUR, THE LONG MAN and THE RELIC.</figcaption></figure>
@@ -634,7 +644,8 @@
       <ul>
         <li><strong>Several closed beta sessions</strong> through August 2026, all positive.</li>
         <li><strong>The first live five-player session</strong> on published Roblox servers, 15 September 2026: four matches across both maps.</li>
-        <li><strong>A family playtest</strong> on live servers, 24 October 2026.</li>
+        <li><strong>A family playtest</strong> on live servers, 24 October 2026, and live matches on every publish since, phone included.</li>
+        <li><strong>Certified releases</strong> since 10 November: every publish is checked place by place before it goes out.</li>
         <li>Every player's pay, XP and match record saved exactly once.</li>
         <li>Matchmaking, arrival and match records ran with no incidents.</li>
         <li>The server held about 60 frames a second with five players and a full herd of wildlife.</li>
@@ -644,8 +655,8 @@
       <h3>Honest about what's next</h3>
       <ul>
         <li>The hunters won all four live matches, and nobody called it unfair. We tuned the monster's early game right after.</li>
-        <li>No match has reached Stage 3 with real players yet; the next session tests it.</li>
-        <li>The game is not public yet. Every blocker the October launch audits found is fixed; launch still needs a re-audit, a certified release, a live session that reaches Stage 3 and a real-phone performance baseline.</li>
+        <li>One live match has reached Stage 3, against bot hunters; none yet with five people.</li>
+        <li>The game goes public on 25 November. The one blocker the 11 November pre-launch audit found is fixed; a real-phone performance baseline is still owed.</li>
         <li>Strangers on public servers, matchmaking across two live lobby servers, every purchase end to end, crash-rejoin, bot matches and private matches still need proof on published servers.</li>
       </ul>
     </div>
@@ -661,16 +672,16 @@
     <div class="card" id="money-live">
       <div class="tag">Live in the build today</div>
       <h3>A two-currency cosmetic shop</h3>
-      <p>Every cosmetic can be earned with Scrip, which every match pays (a loss pays nearly as much as a win), or bought with Robux. 122 priced items today:</p>
+      <p>Every cosmetic can be earned with Scrip, which every public match pays (a loss pays nearly as much as a win), or bought with Robux. 134 priced items at launch:</p>
       <div style="margin-top:10px">
-        <div class="price"><span>Premium monster bodies (7)</span><b>R$400 · 4,000 Scrip</b></div>
+        <div class="price"><span>Premium monster bodies (10)</span><b>R$400 · 4,000 Scrip</b></div>
         <div class="price"><span>Premium weapon skins, with their own effects (16)</span><b>R$400 · 4,000 Scrip</b></div>
         <div class="price"><span>Monster recolours (12)</span><b>R$250 · 1,500 Scrip</b></div>
         <div class="price"><span>Hunter outfits (12)</span><b>R$200 · 1,000 Scrip</b></div>
         <div class="price"><span>Kit item skins (6)</span><b>R$200 · 1,000 Scrip</b></div>
-        <div class="price"><span>Weapon finishes (36)</span><b>R$99 · 500 Scrip</b></div>
-        <div class="price"><span>Premium player-card banners (6)</span><b>R$150 · 750 Scrip</b></div>
-        <div class="price"><span>Emotes (27)</span><b>R$50 · 250 Scrip</b></div>
+        <div class="price"><span>Weapon finishes (36)</span><b>R$99 · 300 Scrip</b></div>
+        <div class="price"><span>Premium player-card banners (7)</span><b>R$150 · 750 Scrip</b></div>
+        <div class="price"><span>Emotes (35)</span><b>R$50 · 150 Scrip</b></div>
       </div>
       <p style="margin-top:10px">Grind or pay: a premium skin is about 53 matches of play, or R$400. Eight Robux products and the VIP pass are live in the build, and the shop shows each player Roblox's own price for their region (the prices above are list prices), and real Robux purchases are verified on the live game.</p>
     </div>
@@ -709,8 +720,8 @@
       <div class="tag">The content cadence</div>
       <h3>New monsters are the hype spike</h3>
       <ul>
-        <li><strong>Characters are data, not code.</strong> The Long Man went from settled design to pickable in the match in about a week, without touching the Wendigo. That is the business model: a new monster is a content drop, not a rewrite.</li>
-        <li><strong>Monster concepts on file:</strong> the Jersey Devil (verticality), the Sasquatch (it attacks the hunters' tracking) and the Rougarou (contagion).</li>
+        <li><strong>Characters are data, not code.</strong> The Long Man went from settled design to pickable in the match in about a week, without touching the Wendigo, and Bigfoot went from first ask to a full kit in about two weeks. That is the business model: a new monster is a content drop, not a rewrite.</li>
+        <li><strong>Monster concepts on file:</strong> the Jersey Devil (verticality) and the Rougarou (contagion).</li>
         <li><strong>A second character for every hunter class</strong>, each with its own kit.</li>
         <li><strong>Dynamic map events:</strong> one announced hazard at a time (a zone closing, a storm that gives the monster cover to feed) as a cheap weekly change.</li>
         <li><strong>More maps:</strong> each map is its own place that joins the queue's roll, exactly as BASIN 9 did.</li>
@@ -722,15 +733,15 @@
 <!-- ============ TIMELINE ============ -->
 <section class="wrap" id="timeline">
   <div class="kicker">Timeline</div>
-  <h2>120 days in, and the road to launch</h2>
+  <h2>140 days in, and the road to launch</h2>
   <ol class="timeline">
     <li class="done"><div class="when">July 2026</div><h4>From four grey blocks to a game</h4><p>First code on 3 July; the feed-and-evolve loop the next day. Then the design thesis, the four hunter kits, saved player profiles, the BLACKPINE map rebuild, the first phone controls and the separate lobby place.</p></li>
     <li class="done"><div class="when">August 2026</div><h4>A full game</h4><p>Cross-server matchmaking (5 August), account progression (levels, ranks, titles), the shop with Scrip earning switched on, and the second monster, the Long Man, pickable from 28 August. Several closed beta sessions, all positive.</p></li>
     <li class="done"><div class="when">September 2026</div><h4>Real players, real servers</h4><p>BASIN 9 joins the map rotation and the Robux shop is built (3 September). The first live five-player session on published servers (15 September). Separate phone and controller layouts for the HUD, menus and controls. A full internal audit on 27 September found no launch blockers. The final name, WHAT WE KEEP OUT (28 September), then bot hunters and private matches (29 September).</p></li>
     <li class="done"><div class="when">October 2026</div><h4>A store worth opening, and a queue that never sits empty</h4><p>The Store and My Locker rebuilt for computer, phone and console, premium gun skins with their own effects, and the VIP pass built and priced (7 October). Launch audits on 7 and 9 October, and every blocker they found fixed. A private test copy of the whole game, bots that read trails and answer calls, on 19 October The Unlit, the first-time role pick and bots that fill whichever side the players did not pick, on 26 October player cards, a pie-slice emote wheel and a TV and tablet pass, and on 1 November the Dispatch Post went live, with the game's own words corrected in all 17 languages.</p></li>
-    <li class="now"><div class="when">Now</div><h4>Launch prep</h4><p>A re-audit, a live session that reaches Stage 3, a certified release, a real-phone performance baseline, and live proof of every purchase end to end, crash-rejoin and matchmaking across two lobby servers.</p></li>
-    <li><div class="when">Target: Q4 2026</div><h4>Public launch</h4><p>The experience goes public. This is where launch support and user acquisition make the difference, because the first weeks decide whether the queue fills.</p></li>
-    <li><div class="when">After launch</div><h4>Season one</h4><p>A seasonal cosmetic track, the third monster, and dynamic map events.</p></li>
+    <li class="done"><div class="when">November 2026</div><h4>Ready to go public</h4><p>Certified releases from 10 November, a pre-launch audit on 11 November with its one blocker fixed, Bigfoot built as the third monster, and new title art with all three Monsters.</p></li>
+    <li class="now"><div class="when">25 November 2026</div><h4>Public launch</h4><p>The experience goes public with the launch update. This is where launch support and user acquisition make the difference, because the first weeks decide whether the queue fills.</p></li>
+    <li><div class="when">After launch</div><h4>Season one</h4><p>A seasonal cosmetic track, a fourth monster, and dynamic map events.</p></li>
   </ol>
 </section>
 
@@ -747,7 +758,7 @@
     <div class="card">
       <div class="tag">Engineering</div>
       <h3>AI coding agents, run like a team</h3>
-      <p>The code is written by AI coding agents (Anthropic's Claude Code, with OpenAI's Codex on some tasks) working under a written engineering rulebook: the server owns gameplay truth, every tuning number lives in config, and no change lands until the automated gate passes. That is how one director produced 12,436 commits in 120 days without the codebase rotting.</p>
+      <p>The code is written by AI coding agents (Anthropic's Claude Code, with OpenAI's Codex on some tasks) working under a written engineering rulebook: the server owns gameplay truth, every tuning number lives in config, and no change lands until the automated gate passes. That is how one director produced 19,010 commits in 140 days without the codebase rotting.</p>
     </div>
     <div class="card">
       <div class="tag">Art and audio</div>
@@ -792,7 +803,7 @@
 <footer>
   <div class="wrap">
     <h2>Talk to us</h2>
-    <p class="muted narrow">WHAT WE KEEP OUT is in closed playtest. Playtest access, a live walkthrough in Roblox Studio or a deeper look at any system is available on request.</p>
+    <p class="muted narrow">WHAT WE KEEP OUT goes public on Roblox on 25 November. A live walkthrough in Roblox Studio or a deeper look at any system is available on request.</p>
     <div class="contact">
       <div><b>Founder & creative director</b>Anthony Claudio</div>
       <div><b>Studio</b><a href="https://www.roblox.com/communities/279265964">Red Chevron Studios</a> on Roblox</div>
