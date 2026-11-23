@@ -30,12 +30,12 @@ My working repos are private while the projects are in development, but here's w
 
 My biggest project. Four hunters, one monster that eats to grow, and by the end of the match the hunted becomes the hunter. Built under my studio, Red Chevron Studios, starting 3 July 2026. It was called BANISHED until 28 September 2026.
 
-- **Two monsters, four hunter classes, two maps**, all playable end to end: lobby, matchmaking, match, scoreboard, saved progress
+- **Three monsters, four hunter classes, two maps**, all playable end to end: lobby, matchmaking, match, scoreboard, saved progress
 - **Bots fill a thin queue** on whichever side players did not pick, private matches with custom rules, a cosmetic shop and a VIP pass
 - **Computer, phone, tablet and controller**, each with its own controls and layout, and a TV build that reads from the couch
 - **Player cards**: a calling card with earned and premium banners, titles and your stats, plus a pie-slice emote wheel
 - **First live five-player session** on published Roblox servers on 15 September 2026. All five players wanted to go again
-- **12,436 commits in 120 days**, with 376 automated test suites running on every change
+- **20,131 commits in 143 days**, with 428 automated test suites running on every change
 
 **👉 [The full pitch: the game, what's built, where it stands, monetization, live-ops and roadmap](https://corporalv1.github.io/built-with-claude/what-we-keep-out.html)** ([PDF](https://corporalv1.github.io/built-with-claude/WHAT-WE-KEEP-OUT-pitch.pdf))
 
